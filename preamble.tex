@@ -1,0 +1,34 @@
+\usepackage{fullpage} % Configuracion de margenes a 1 in
+\usepackage{parskip}
+
+% Configuración de idioma y codificación
+\usepackage[spanish,mexico]{babel} 
+\usepackage[T1]{fontenc}
+
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+\usepackage{amsthm}
+\theoremstyle{definition}
+\newtheorem*{solucion}{Solución}
+
+
+% Gráficos
+\usepackage{graphicx}
+\usepackage{rotating}
+\usepackage{tikz}
+
+
+% Cajas
+\usepackage{tcolorbox}
+
+\newtcolorbox[auto counter]{ejercicio}[1][]{
+	fonttitle=\bfseries,
+	title=\textbf{\textsf{Ejercicio~\thetcbcounter.}}
+}
+
+
+% Uso de hipervínculos
+\usepackage{hyperref}

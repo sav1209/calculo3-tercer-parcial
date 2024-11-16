@@ -1,0 +1,64 @@
+% % Paquete obligatorios
+% \usepackage[spanish,mexico]{babel}
+% \usepackage{fullpage}
+% \usepackage{graphicx}
+% \usepackage{rotating}
+% \usepackage[T1]{fontenc}
+
+% % Carga el código de la portada
+% \input{portada/main_portada}
+
+\newcommand{\portada}[5]{
+    \begin{titlepage}
+    \begin{minipage}[c][\textheight]{0.2\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{portada/escudo-unam.png}
+        \vfill
+        \rule{3pt}{380pt} \rule{1.5pt}{380pt}
+        \vfill
+        \includegraphics[width=\linewidth]{portada/escudo-fes.jpg}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[c][\textheight]{0.75\textwidth}
+        \begin{minipage}[c][0.28\textwidth]{\linewidth}
+            \null\vfill
+            \centering
+    
+            {\huge\bfseries UNIVERSIDAD NACIONAL\\[0.5em]AUTÓNOMA DE MÉXICO}
+            
+            \vfill
+            \raggedright
+            \begin{rotate}{-90}
+                \rule{3pt}{\linewidth} \rule{1.5pt}{\linewidth}
+            \end{rotate}
+        \end{minipage}
+        
+    \centering
+    
+    \vspace{1cm}
+    {\LARGE Facultad de Estudios Superiores Acatlán}
+    
+        \begin{minipage}[c][7cm]{\linewidth}\centering\Huge\bfseries\scshape
+        	#1
+        \end{minipage}
+
+    {\Large Licenciatura en\\[0.75ex]Matemáticas Aplicadas y Computación}
+    
+    
+    \vfill\large
+    
+    \textbf{Asignatura:} #2
+    
+    \textbf{Profesor:} #3
+
+    \vfill
+    
+    {\Large\textbf{Grupo:} #4}
+
+    \vfill
+    
+    #5
+    
+    \end{minipage}
+    \end{titlepage}
+}

@@ -1,0 +1,30 @@
+% De preferencia compile usando pdflatex
+\documentclass[12pt]{article}
+
+% Carga todos los paquetes necesarios
+\input{./preamble}
+% Carga el código de la portada
+\input{./portada/main_portada}
+
+
+\begin{document}
+
+% Incluye portada
+\portada
+{Tercer examen parcial} % Nombre del trabajo
+{Cálculo III} % Asignatura
+{Saavedra Luis Héctor Axel} % Profesor
+{1302} % Grupo
+{20 de noviembre de 2024} % Fecha de entrega
+
+\foreach \n in {1,2,...,38}{
+	\begin{ejercicio}
+		\input{ejercicios/ejercicio-\n}
+	\end{ejercicio}
+	
+	\begin{solucion}
+		\input{soluciones/sol-ejercicio-\n}
+	\end{solucion}
+}
+
+\end{document}
