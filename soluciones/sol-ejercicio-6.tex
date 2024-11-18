@@ -1,0 +1,59 @@
+El dominio $D^*$ está definido por:
+$$0 \leq u \leq \ \ \  1 \leq v \leq 2$$
+
+Utilizamos los términos de la transformación $T$ para obtener los límites de $D$:
+
+\vspace{0.2cm}
+
+\\Para $x$:
+
+$x = u$, como $u$ varía de 0 a 1:
+$$0 \leq x \leq 1$$
+
+\\Para $y$:
+
+$y = v(1+u)$, cuando $v = 1$, entonces: $y = 1 + x$, cuando $v = 2$, entonces: $y= 2 + 2x$
+
+$$1 + x \leq y \leq 2 + 2x$$
+entonces: $D: 0 \leq x \leq 1$ \ \ \ \ $1 + x \leq y \leq 2 + 2x$
+
+Calculamos la matriz Jacobiana de la transformación:
+$$J = \frac{\partial(x,y)}{\partial(u,v)} = \begin{vmatrix}
+    \frac{\partial x}{\partial u} & \frac{\partial x}{\partial v}\\
+\frac{\partial y}{\partial u} & \frac{\partial y}{\partial v}\\
+\end{vmatrix}$$
+
+$$J = \begin{vmatrix}
+1 & 0\\
+v & 1 + u
+\end{vmatrix} = (1)(1 + u) - (0)(v) = 1 + u$$
+
+Por lo tanto: $$dxdy = \begin{vmatrix}
+J
+\end{vmatrix} dudv = (1 + u)dudv$$
+
+Evaluamos la primer integral:
+$$\iint_D xy \ dx \ dy = \iint_{D^*} uv(1 + u) \cdot (1 + u)dudv$$
+
+$$= \int_{0}^{1}\int_{1}^{2} uv(1 + u)^2dvdu$$
+$$= \int_{0}^{1}(u(1 + u)^2 \cdot \frac{v^2}{2}) \Big|_1^2 du$$
+$$= \int_{0}^{1}((2u(1 + u)^2) - (\frac{u(1 + u)^2}{2})) du$$
+$$= \int_{0}^{1}(\frac{3u^3 + 6u^2 + 3u}{2}) du$$
+$$= \frac{3}{2} \cdot \int_{0}^{1}(u^3 + 2u^2 + u) du$$
+$$= \frac{3}{2} \cdot (\frac{u^4}{4} + \frac{2u^3}{3} + \frac{u^2}{2}) \Big|_0^1$$
+$$= \frac{3}{2} \cdot \frac{17}{12} - \frac{3}{2} \cdot 0$$
+$$= \frac{3}{2} \cdot \frac{17}{12} = \frac{17}{8}$$
+
+\vspace{0.3cm}
+
+Evaluamos la segunda integral:
+$$\iint_D (x - y) \ dx \ dy = \iint_{D^*} (u - v - uv) \cdot (1 + u)dudv$$
+
+$$= \int_{0}^{1}\int_{1}^{2} (u + u^2 - v -2uv - u^2v)dvdu$$
+$$= \int_{0}^{1}(uv + u^2v - \frac{v^2}{2} - uv^2 - \frac{u^2v^2}{2}) \Big|_1^2 du$$
+$$= \int_{0}^{1}(2u + 2u^2 - 2 - 4u -2u^2) - (u + u^2 - \frac{1}{2} - u - \frac{u^2}{2}) du$$
+$$= \int_{0}^{1}(\frac{-u^2}{2} - 2u - \frac{3}{2}) du$$
+$$= \frac{-1}{2} \cdot \int_{0}^{1}(u^2 + 4u + 3) du$$
+$$= \frac{-1}{2} \cdot (\frac{u^3}{3} + 2u^2 + 3u) \Big|_0^1$$
+$$= \frac{-1}{2} \cdot \frac{16}{3} - \frac{-1}{2} \cdot 0$$
+$$= \frac{-1}{2} \cdot \frac{16}{3} = \frac{-8}{3}$$
