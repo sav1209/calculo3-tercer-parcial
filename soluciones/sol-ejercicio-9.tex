@@ -1,0 +1,83 @@
+\[
+ \iint_D \frac{1}{\sqrt{x^2 + y^2}} \, dx \, dy,
+\]
+
+\[
+T(u, v) = (u^2 - v^2, 2uv)
+\]
+
+\subsection*{Transformación de variables}
+
+\[
+x = u^2 - v^2, \quad y = 2uv
+\]
+\[
+x^2 + y^2 = (u^2 - v^2)^2 + (2uv)^2
+\]
+\[
+x^2 + y^2 = u^4 - 2u^2v^2 + v^4 + 4u^2v^2 = u^4 + 2u^2v^2 + v^4 = (u^2 + v^2)^2
+\]
+
+Por lo tanto:
+\[
+\sqrt{x^2 + y^2} = u^2 + v^2
+\]
+
+\subsection*{Determinante jacobiano}
+
+
+\[
+\frac{\partial(x, y)}{\partial(u, v)} =
+\begin{vmatrix}
+2u & -2v \\
+2v & 2u
+\end{vmatrix} = (2u)(2u) - (-2v)(2v) = 4u^2 + 4v^2 = 4(u^2 + v^2)
+\]
+
+
+\[
+\left| \frac{\partial(x, y)}{\partial(u, v)} \right| = 4(u^2 + v^2)
+\]
+
+\subsection*{Integral en las nuevas variables}
+
+\[
+\frac{1}{\sqrt{x^2 + y^2}} = \frac{1}{u^2 + v^2}
+\]
+
+\[
+dx \, dy = 4(u^2 + v^2) \, du \, dv.
+\]
+Por lo tanto:
+\[
+\iint \frac{1}{\sqrt{x^2 + y^2}} \, dx \, dy = \iint \frac{1}{u^2 + v^2} \cdot 4(u^2 + v^2) \, du \, dv.
+\]
+
+\[
+\iint \frac{1}{\sqrt{x^2 + y^2}} \, dx \, dy = \iint 4 \, du \, dv.
+\]
+
+\subsection*{Región de integración}
+La region de integracion del conjunto \( D^* \), que es un cuarto de disco en el plano \((u, v)\), donde:
+\[
+u^2 + v^2 \leq 1, \quad u \geq 0, \quad v \geq 0.
+\]
+
+\subsection*{Integral final en coordenadas polares}
+
+ \( u^2 + v^2 = r^2 \),
+- La región es: \( 0 \leq r \leq 1 \), \( 0 \leq \theta \leq \frac{\pi}{2} \)
+
+
+\[
+\int_0^{\frac{\pi}{2}} \int_0^1 4r \, dr \, d\theta.
+\]
+
+\[
+\int_0^{\frac{\pi}{2}} \int_0^1 4r \, dr \, d\theta = \int_0^{\frac{\pi}{2}} \left[ 2r^2 \right]_0^1 d\theta = \int_0^{\frac{\pi}{2}} 2 \, d\theta = 2\theta \Big|_0^{\frac{\pi}{2}} = 2 \cdot \frac{\pi}{2} = \pi.
+\]
+
+
+\[
+\iint \frac{1}{\sqrt{x^2 + y^2}} \, dx \, dy = \pi.
+\]
