@@ -1,0 +1,58 @@
+El dominio $D^*$ está definido por:
+$$0 \leq u \leq \ \ \  1 \leq v \leq 2$$
+
+Utilizamos los términos de la transformación $T$ para obtener los límites de $D$:
+
+\vspace{0.2cm}
+
+\\Para $x$:
+
+$x = 4u$, como $u$ varía de 0 a 1:
+$$0 \leq x \leq 1$$
+
+\vspace{0.2cm}
+
+\\Para $y$:
+
+$y = 2u + 3v$, cuando $v = 1$, entonces: $y = 2u + 3$, cuando $v = 2$, entonces: $y= 2u + 6$
+
+Sustituimos $u = \frac{x}{4}$ y acotamos:
+$$\frac{x}{2} + 3 \leq y \leq \frac{x}{2} + 6$$
+entonces: $D: 0 \leq x \leq 1$ \ \ \ \ $\frac{x}{2} + 3 \leq y \leq \frac{x}{2} + 6$
+
+Procedemos a calcular la matriz Jacobiana de la transformación:
+$$J = \frac{\partial(x,y)}{\partial(u,v)} = \begin{vmatrix}
+    \frac{\partial x}{\partial u} & \frac{\partial x}{\partial v}\\
+\frac{\partial y}{\partial u} & \frac{\partial y}{\partial v}\\
+\end{vmatrix}$$
+
+$$J = \begin{vmatrix}
+4 & 0\\
+2 & 3
+\end{vmatrix} = (4)(3) - (0)(2) = 12$$
+
+Por lo tanto: $$dxdy = \begin{vmatrix}
+J
+\end{vmatrix} dudv = 12dudv$$
+
+Evaluamos la primer integral:
+$$\iint_D xy \ dx \ dy = \iint_{D^*} (8u^2 + 12uv) \cdot 12dudv$$
+
+$$= \int_{0}^{1}\int_{1}^{2} (96u^2 + 144uv)dvdu$$
+$$= \int_{0}^{1}(96u^2v + 144u \cdot \frac{v^2}{2}) \Big|_1^2 du$$
+$$= \int_{0}^{1}((192u^2 + 288u) - (96u^2 + 72u)) du$$
+$$= \int_{0}^{1}(96u^2 + 216u) du$$
+$$= (\frac{96u^3}{3} + \frac{216u^2}{2}) \Big|_0^1$$
+$$= (\frac{96}{3} + \frac{216}{2}) - (\frac{0}{3} + \frac{0}{2})$$
+$$= (32 + 108) = 140$$
+
+\vspace{0.3cm}
+
+Evaluamos la segunda integral:
+$$\iint_D (x - y) \ dx \ dy = \iint_{D^*} (2u - 3v) \cdot 12dudv$$
+$$= \int_{0}^{1}\int_{1}^{2} (24u - 36v)dvdu$$
+$$= \int_{0}^{1}(24uv - 36 \cdot \frac{v^2}{2}) \Big|_1^2 du$$
+$$= \int_{0}^{1}((48u - 72) - (24u -18)) du$$
+$$= \int_{0}^{1}(24u - 54) du$$
+$$= (\frac{24u^2}{2} - 54u) \Big|_0^1$$
+$$= (12 - 54) - (0 - 0) = -42$$
