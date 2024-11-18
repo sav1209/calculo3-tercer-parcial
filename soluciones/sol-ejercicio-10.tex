@@ -1,0 +1,69 @@
+\[
+\int \int_R \frac{1}{x + y} \, dy \, dx
+\]
+
+\[
+T(u, v) = (u - uv, uv).
+\]
+
+\subsection*{Transformación de variables}
+
+
+\[
+x = u - uv, \quad y = uv.
+\]
+
+\subsection*{Determinante Jacobiano}
+
+
+\[
+\frac{\partial(x, y)}{\partial(u, v)}  =  \begin{vmatrix} 
+1 - v & -u \\ 
+v & u 
+\end{vmatrix} = (1 - v)u - (-uv) = u - uv + uv = u.
+\]
+
+
+\[
+\left| \frac{\partial(x, y)}{\partial(u, v)} \right| = u.
+\]
+
+\subsection*{Region de integracion}
+
+
+\begin{itemize}
+    \item \(x = 0 \implies u - uv = 0 \implies u(1 - v) = 0 \implies u = 0 \text{ o } v = 1\),
+    \item \(y = 0 \implies uv = 0 \implies v = 0 \text{ (cuando \(u \neq 0\))}\),
+    \item \(x + y = 1 \implies (u - uv) + uv = 1 \implies u = 1\),
+    \item \(x + y = 4 \implies (u - uv) + uv = 4 \implies u = 4\).
+\end{itemize}
+
+
+\[
+1 \leq u \leq 4, \quad 0 \leq v \leq 1.
+\]
+
+\subsection*{Integral final }
+
+
+\[
+\int \int_R \frac{1}{x + y} \, dy \, dx.
+\]
+
+
+\[
+x + y = u, \quad dy \, dx  = u \, du \, dv.
+\]
+
+
+\[
+\int_1^4 \int_0^1 \frac{1}{u} \cdot u \, dv \, du = \int_1^4 \int_0^1 1 \, dv \, du =
+\int_1^{4} \left[ v \right]_0^1 du = 
+\int_1^4 1 \, du =
+\int_1^4 1 \, du = 4 - 1 = 3
+\]
+
+
+\[
+\int \int_R \frac{1}{x + y} \, dy \, dx = 3.
+\]
