@@ -1,0 +1,94 @@
+\section{Ejercicio 2}
+    Suggest a substitution/transformation that will simplify the following integrands, and find their Jacobians.
+    \begin{enumerate}
+        \item $\iint_R (5x + y)^3 (x + 9y)^4 \, dA$
+        \item $\iint_R x \sin(6x + 7y) - 3y \sin(6x + 7y) \, dA$
+    \end{enumerate}
+
+    \subsection*{Parte (a)}
+\[
+\iint_R (5x + y)^3 (x + 9y)^4 \, dA
+\]
+
+\subsubsection*{Identificar la Transformación}
+Observamos que los términos \(5x + y\) y \(x + 9y\) se pueden simplificar utilizando la transformación:
+\[
+u = 5x + y, \quad v = x + 9y.
+\]
+
+\subsubsection*{Resolver \(x\) y \(y\) en términos de \(u\) y \(v\)}
+De las ecuaciones de transformación, resolvemos para \(x\) y \(y\):
+\[
+x = \frac{u - v}{44}, \quad y = \frac{9v - 5u}{44}.
+\]
+
+\subsubsection*{Calcular el Jacobiano}
+El Jacobiano \(J\) se define como:
+\[
+J = \begin{vmatrix}
+\frac{\partial x}{\partial u} & \frac{\partial x}{\partial v} \\
+\frac{\partial y}{\partial u} & \frac{\partial y}{\partial v}
+\end{vmatrix}.
+\]
+
+Calculamos las derivadas parciales:
+\[
+\frac{\partial x}{\partial u} = \frac{1}{44}, \quad \frac{\partial x}{\partial v} = -\frac{1}{44}, \quad \frac{\partial y}{\partial u} = -\frac{5}{44}, \quad \frac{\partial y}{\partial v} = \frac{9}{44}.
+\]
+
+Sustituyendo, obtenemos:
+\[
+J = \begin{vmatrix}
+\frac{1}{44} & -\frac{1}{44} \\
+-\frac{5}{44} & \frac{9}{44}
+\end{vmatrix} = \frac{1}{44} \cdot \frac{9}{44} - \left(-\frac{1}{44} \cdot -\frac{5}{44}\right) = \frac{9}{1936} - \frac{5}{1936} = \frac{4}{1936} = \frac{1}{484}.
+\]
+
+Por lo tanto, el Jacobiano es:
+\[
+\boxed{\frac{1}{484}}
+\]
+
+\subsection*{Parte (b)}
+\[
+\iint_R x \sin(6x + 7y) - 3y \sin(6x + 7y) \, dA
+\]
+
+\subsubsection*{Identificar la Transformación}
+Observamos que \(6x + 7y\) aparece repetido en el integrando. Usamos la transformación:
+\[
+u = 6x + 7y, \quad v = x.
+\]
+
+\subsubsection*{Resolver \(x\) y \(y\) en términos de \(u\) y \(v\)}
+De las ecuaciones de transformación, resolvemos para \(x\) y \(y\):
+\[
+x = v, \quad y = \frac{u - 6v}{7}.
+\]
+
+\subsubsection*{Calcular el Jacobiano}
+El Jacobiano \(J\) se define como:
+\[
+J = \begin{vmatrix}
+\frac{\partial x}{\partial u} & \frac{\partial x}{\partial v} \\\\
+\frac{\partial y}{\partial u} & \frac{\partial y}{\partial v}
+\end{vmatrix}.
+\]
+
+Calculamos las derivadas parciales:
+\[
+\frac{\partial x}{\partial u} = 0, \quad \frac{\partial x}{\partial v} = 1, \quad \frac{\partial y}{\partial u} = \frac{1}{7}, \quad \frac{\partial y}{\partial v} = -\frac{6}{7}.
+\]
+
+Sustituyendo, obtenemos:
+\[
+J = \begin{vmatrix}
+0 & 1 \\\\
+\frac{1}{7} & -\frac{6}{7}
+\end{vmatrix} = (0)(-\frac{6}{7}) - (1)(\frac{1}{7}) = -\frac{1}{7}.
+\]
+
+Por lo tanto, el Jacobiano es:
+\[
+\boxed{-\frac{1}{7}}
+\]
