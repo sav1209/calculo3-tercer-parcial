@@ -1,0 +1,69 @@
+Igualamos la expresion a $I$\begin{center}
+    $I=\displaystyle\int_{0}^{\infty} e^{-4x^2} dx$
+\end{center}
+ahora bien, definamos\begin{center}
+    $\displaystyle\int_{0}^{\infty} e^{-4y^2} dy$
+\end{center}
+y multipliquemos ambas integrales por el teorema de Fubibni, entonces\begin{center}
+    $I^2 = \displaystyle\int_{0}^{\infty} \int_{0}^{\infty} e^{-4(x^2+y^2)} dxdy$
+\end{center}
+Apliquemos cambio de coordenadas a coordenadas cilindricas, por definicion tenemos\begin{center}
+    $x = rcos\theta\wedge y = rsen\theta$
+\end{center}
+Por como esta definida la distancia de un radio obtenemos\begin{center}
+    $r^2 = \left ( rcos\theta \right )^2 + \left ( rsen\theta \right )^2$\\
+    \vspace{0.2cm}
+    $\Rightarrow  r^2 = r^2cos^2\theta + r^2sen^2\theta$\\
+    \vspace{0.2cm}
+    $\Rightarrow r^2 = r^2\left ( cos^2\theta + sen^2\theta \right )$
+\end{center}y por identidades trigonometricas tenemos\begin{center}
+    $r^2 = r^2$
+\end{center}
+De esta manera podemos confirmar que\begin{center}
+    $r^2 = x^2 + y^2$
+\end{center}
+Ahora bien, obtenemos el jacobiano\begin{center}
+    $\displaystyle\frac{\partial\left ( x,y \right )}{\partial\left ( r,\theta \right )} = \begin{pmatrix}
+        \displaystyle\frac{\partial x}{\partial r} & \displaystyle\frac{\partial x}{\partial \theta} \\\\
+        \displaystyle\frac{\partial y}{\partial r} & \displaystyle\frac{\partial y}{\partial \theta}
+    \end{pmatrix}$
+\end{center}Obteniendo las derivadas parciales de $x = rcos\theta$, tenemos\begin{center}
+    $\displaystyle\frac{\partial x}{\partial r} = cos\theta \wedge \displaystyle\frac{\partial x}{\partial \theta} = -rsen\theta$
+\end{center}Obteniendo derivadas parciales de $y = rsen\theta$ tenemos\begin{center}
+    $\displaystyle\frac{\partial y}{\partial r} = sen\theta \wedge \displaystyle\frac{\partial y}{\partial \theta} = rcos\theta$
+\end{center}Aasi la jacobiana es\begin{center}
+    $J = \begin{pmatrix}
+        \displaystyle cos\theta & \displaystyle -rsen\theta \\\\
+        \displaystyle sen\theta & \displaystyle rcos\theta 
+    \end{pmatrix}$
+\end{center}El determinante es\begin{center}
+    $\displaystyle\det(J) = \left ( cos\theta \right )\left ( rcos\theta \right ) - \left ( -rsen\theta \right )\left ( sen\theta \right )$\\
+    \vspace{0.3cm}
+    $\Rightarrow det(J) = rcos^2\theta + rsen^2\theta$\\
+    \vspace{0.3cm}
+    $\Rightarrow det(J) = r\left ( cos^2\theta + sen^2\theta \right )$\\
+    \vspace{0.3cm}
+    $\Rightarrow det(J) = r$
+\end{center}
+Ahora notemos que la doble integral utiliza solamente el primer cuadrante, esto porque va de $0$ a $\infty$, al aplicar el cambio de variable\begin{center}
+    $r\in \left [ 0,\infty \right ]$\\
+    \vspace{0.3cm}
+    $\displaystyle\theta\in\left [ 0,\frac{\pi}{2} \right ] $
+\end{center}Ahora bien, regresando a la integral, tenemos\begin{center}
+    $I^2 = \displaystyle\int_{0}^{\frac{\pi}{2}} \displaystyle\int_{0}^{\infty} e^{-4r^2} rdrd\theta$
+\end{center}
+Ya que $e^{-4r^2}$ depende solo de $r$, y la otra función depende solo de $\theta$, se pueden separar las integrales como\begin{center}
+    $I^2 = \displaystyle\int_{0}^{\frac{\pi}{2}} d\theta \displaystyle\int_{0}^{\infty} e^{-4r^2} dr$
+\end{center}Integrando $d\theta$, tenemos\begin{center}
+    $\displaystyle I^2 = \frac{\pi}{2} \int_{0}^{\infty} e^{-4r^2} dr$
+\end{center}Ahora para la otra integral, apliquemos un cambio de variable, tomemos $u = 4r^2$, derivando\begin{center}
+    $\displaystyle\frac{du}{dr} = 8r\Rightarrow du = 8rdr\Rightarrow \displaystyle dr = \frac{du}{8}$
+\end{center}Cuando $r\rightarrow\infty$, entonces $u\rightarrow\infty$, asi sustituyendo\begin{center}
+    $\displaystyle\int_{0}^{\infty} e^{-4r^2} dr = \frac{1}{8} \int_{0}^{\infty} e^{-u} du = \frac{1}{8} \left ( e^{-u} |_{0}^{\infty} \right ) = \frac{1}{8}\left ( 0-1 \right ) = \frac{1}{8}$
+\end{center}Esto porque cuando $u\rightarrow\infty$, hace que $e^{-u}\rightarrow 0$ porque la función exponencial decrece rapidamente, asi bien, obtenemos\begin{center}
+    $I^2 = \displaystyle\frac{\pi}{2} \left ( \frac{1}{8} \right ) = \frac{\pi}{16}$\\
+    \vspace{0.3cm}
+    $I = \displaystyle\frac{\sqrt{\pi}}{\sqrt{16}} = \displaystyle\frac{\sqrt{\pi}}{4}$
+\end{center}Asi podemos concluir que\begin{center}
+    $\displaystyle\int_{0}^{\infty} e^{-4x^2} dx = \displaystyle\frac{\sqrt{\pi}}{4}$
+\end{center}
