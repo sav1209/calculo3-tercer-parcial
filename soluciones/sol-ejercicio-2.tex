@@ -18,35 +18,68 @@ u = 5x + y, \quad v = x + 9y.
 
 \subsubsection*{Resolver \(x\) y \(y\) en términos de \(u\) y \(v\)}
 De las ecuaciones de transformación, resolvemos para \(x\) y \(y\):
+Para calcular el Jacobiano, necesitamos escribir \(x\) y \(y\) en términos de \(u\) y \(v\):
+
 \[
-x = \frac{u - v}{44}, \quad y = \frac{9v - 5u}{44}.
+u = 5x + y \quad \text{y} \quad v = x + 9y.
 \]
+
+Este sistema se resuelve como sigue:
+
+\begin{enumerate}[label=\arabic*.]
+    \item Multiplicamos la primera ecuación por \(9\):
+    \[
+    9u = 45x + 9y.
+    \]
+
+    \item Restamos la segunda ecuación:
+    \[
+    9u - v = 45x + 9y - x - 9y,
+    \]
+    lo que simplifica a:
+    \[
+    9u - v = 44x \quad \implies \quad x = \frac{9u - v}{44}.
+    \]
+
+    \item Usamos la primera ecuación para encontrar \(y\):
+    \[
+    y = u - 5x = u - 5 \left( \frac{9u - v}{44} \right) = \frac{44u - 45u + 5v}{44} = \frac{-u + 5v}{44}.
+    \]
+
+\end{enumerate}
+
+Por lo tanto:
+\[
+x = \frac{9u - v}{44}, \quad y = \frac{-u + 5v}{44}.
+\]
+
+
 
 \subsubsection*{Calcular el Jacobiano}
 El Jacobiano \(J\) se define como:
 \[
 J = \begin{vmatrix}
-\frac{\partial x}{\partial u} & \frac{\partial x}{\partial v} \\
+\frac{\partial x}{\partial u} & \frac{\partial x}{\partial v} \\\\
 \frac{\partial y}{\partial u} & \frac{\partial y}{\partial v}
 \end{vmatrix}.
 \]
 
 Calculamos las derivadas parciales:
 \[
-\frac{\partial x}{\partial u} = \frac{1}{44}, \quad \frac{\partial x}{\partial v} = -\frac{1}{44}, \quad \frac{\partial y}{\partial u} = -\frac{5}{44}, \quad \frac{\partial y}{\partial v} = \frac{9}{44}.
+\frac{\partial x}{\partial u} = \frac{9}{44}, \quad \frac{\partial x}{\partial v} = -\frac{1}{44}, \quad \frac{\partial y}{\partial u} = -\frac{1}{44}, \quad \frac{\partial y}{\partial v} = \frac{5}{44}.
 \]
 
 Sustituyendo, obtenemos:
 \[
 J = \begin{vmatrix}
-\frac{1}{44} & -\frac{1}{44} \\
--\frac{5}{44} & \frac{9}{44}
-\end{vmatrix} = \frac{1}{44} \cdot \frac{9}{44} - \left(-\frac{1}{44} \cdot -\frac{5}{44}\right) = \frac{9}{1936} - \frac{5}{1936} = \frac{4}{1936} = \frac{1}{484}.
+\frac{9}{44} & -\frac{1}{44} \\\\
+-\frac{1}{44} & \frac{5}{44}
+\end{vmatrix} = \frac{9}{44} \cdot \frac{5}{44} - \left(-\frac{1}{44} \cdot -\frac{1}{44}\right) = \frac{45}{1936} - \frac{1}{1936} = \frac{1}{44}.
 \]
 
 Por lo tanto, el Jacobiano es:
 \[
-\boxed{\frac{1}{484}}
+\boxed{\frac{1}{44}}
 \]
 
 \subsection*{Parte (b)}
