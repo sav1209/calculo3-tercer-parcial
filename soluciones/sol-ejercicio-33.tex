@@ -1,0 +1,73 @@
+Tenemos que el elipsoide está definido por:
+$$\frac{x^2}{a^2} + \frac{y^2}{b^2} + \frac{z^2}{c^2} \leq 1$$
+en donde $a, b, c > 0$
+
+Aplicamos el cambio de variables:
+$$x = au, \ \ y = bv, \ \ z = cw$$
+entonces, tenemos:
+$$\frac{(au)^2}{a^2} + \frac{(bv)^2}{b^2} + \frac{(cw)^2}{c^2} \leq 1$$
+$$= u^2 + v^2 + w^2 \leq 1$$
+
+Con esto podemos mapear el elipsoide a una esfera unitaria en el espacio $uvw$
+
+Después calculamos el Jacobiano del cambio de variables:
+$$det(J) = \begin{vmatrix}
+    \begin{bmatrix}
+        \frac{\partial x}{\partial u} & 0 & 0\\
+        0 & \frac{\partial y}{\partial v} & 0\\
+        0 & 0 & \frac{\partial z}{\partial w}
+    \end{bmatrix}
+\end{vmatrix} = \begin{vmatrix}
+    abc
+\end{vmatrix}$$
+
+Con lo que tenemos que:
+
+$$dx \ dy \ dz = \begin{vmatrix}
+    abc
+\end{vmatrix} du \ dv \ dw$$
+
+Ahora bien, sabemos que el volumen de una esfera unitaria en el espacio $\mathbb{R}^3$ es $\frac{4\pi}{3}$
+
+Por lo que $V_E = \begin{vmatrix}
+    abc
+\end{vmatrix} \cdot \frac{4\pi}{3}$
+$$V_E = \frac{4\pi abc}{3}$$
+
+Ahora, procedemos a calcular la integral:
+
+$$\iiint_E \frac{x^2}{a^2} + \frac{y^2}{b^2} + \frac{z^2}{c^2}\, dx \ dy \ dz$$
+
+Aplicamos el mismo cambio de variable:
+$$x = au, \ \ y = bv, \ \ z = cw$$
+
+Con esto nos queda:
+$$\iiint_E \frac{(au)^2}{a^2} + \frac{(bv)^2}{b^2} + \frac{(cw)^2}{c^2}\, \begin{vmatrix}
+    abc
+\end{vmatrix} du \ dv \ dw$$
+
+$$= abc \cdot \iiint_{u^2 + v^2 + w^2 \leq 1} u^2 + v^2 + w^2 \, du \ dv \ dw$$
+
+Ahora bien, debemos transformar nuestra integral utilizando coordenadas esféricas:
+$$u = \rho \ sin \phi \ cos \theta, \ \ v = \rho \ sin \phi \ sin \theta, \ \ w = \rho \ cos \phi$$
+
+$$du \ dv \ dw = \rho^2 \ sin \phi \ d\rho \ d\phi \ d\theta$$
+
+además, $\rho \in [0, 1], \ \phi \in [0, \pi],$ y $\theta \in [0, 2\pi]$
+
+Ahora sí, sustituimos en la integral:
+$$abc \cdot \int_0^{2\pi} \int_0^{\pi} \int_0^1 \rho^2 \cdot \rho^2 sin\phi \ d\rho \ d\phi \ d\theta$$
+
+Podemos separar las integrales:
+$$abc \cdot \int_0^{2\pi} d\theta \ \int_0^{\pi} sin\phi \ d\phi \ \int_0^1 \rho^4 \ d\rho $$
+
+$$\int_0^{2\pi} d\theta = 2\pi$$
+$$\int_0^{\pi} sin\phi \ d\phi = 2$$
+$$\int_0^1 \rho^4 \ d\rho = \frac{1}{5}$$
+
+Por último, multiplicamos todos los términos:
+
+$$abc \cdot 2\pi \cdot 2 \cdot \frac{1}{5} = \frac{4\pi abc}{5}$$
+
+Así que:
+$$\iiint_E \frac{x^2}{a^2} + \frac{y^2}{b^2} + \frac{z^2}{c^2}\, dx \ dy \ dz = \frac{4\pi abc}{5} $$
