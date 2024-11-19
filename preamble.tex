@@ -46,7 +46,7 @@
 % Cajas
 \usepackage[most]{tcolorbox}
 
-\newtcolorbox[auto counter]{ejercicio}[1][]{
+\newtcolorbox{ejercicio}[2][]{
 	colback=white,			% Color de fondo
 	colframe=black,			% Color del marco
 	colbacktitle=black,		% Color de fondo del título
@@ -54,7 +54,7 @@
 	fonttitle=\sffamily\bfseries,	% Fuente del título
 	sharp corners=uphill,	% Esquinas redondeadas y en punta
 	arc=3mm,				% Arco de las esquinas redondeadas
-	title={Ejercicio \thetcbcounter}, % Título automático con numeración
+	title={Ejercicio #2}, % Título automático con numeración
 	enhanced,
 	attach boxed title to top left={yshift=-4.25mm, yshifttext=-2mm, xshift=4mm,},		% Posición de la caja del titulo
 	boxed title style={sharp corners=uphill, colframe=black, arc=3mm, boxsep=1.5mm,}, 	% Configuración de la caja del título
