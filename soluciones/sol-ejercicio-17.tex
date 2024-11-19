@@ -1,0 +1,85 @@
+\section*{Cálculo del área de una lemniscata usando coordenadas polares}
+
+La ecuación de la lemniscata es:
+\[
+(x^2 + y^2)^2 = 2a^2(x^2 - y^2)
+\]
+
+\subsection*{Paso 1: Cambiar a coordenadas polares}
+
+En coordenadas polares, \(x = r\cos\theta\) y \(y = r\sin\theta\), además \(x^2 + y^2 = r^2\). Sustituimos en la ecuación de la lemniscata:
+\[
+(r^2)^2 = 2a^2(r^2\cos^2\theta - r^2\sin^2\theta)
+\]
+
+Esto se simplifica a:
+\[
+r^4 = 2a^2r^2(\cos^2\theta - \sin^2\theta)
+\]
+
+Factorizamos \(r^2\) (suponiendo \(r \neq 0\)):
+\[
+r^2 = 2a^2(\cos^2\theta - \sin^2\theta)
+\]
+
+Usamos la identidad \(\cos^2\theta - \sin^2\theta = \cos(2\theta)\):
+\[
+r^2 = 2a^2\cos(2\theta)
+\]
+
+Por lo tanto:
+\[
+r = \sqrt{2a^2\cos(2\theta)}
+\]
+
+\subsection*{Paso 2: Área en coordenadas polares}
+
+La fórmula para el área en coordenadas polares es:
+\[
+A = \frac{1}{2} \int_{\theta_1}^{\theta_2} r^2 \, d\theta
+\]
+
+Sustituimos \(r^2 = 2a^2\cos(2\theta)\):
+\[
+A = \frac{1}{2} \int_{\theta_1}^{\theta_2} 2a^2\cos(2\theta) \, d\theta
+\]
+
+\[
+A = a^2 \int_{\theta_1}^{\theta_2} \cos(2\theta) \, d\theta
+\]
+
+La lemniscata tiene simetría respecto al origen, por lo que podemos calcular el área de una "hoja" (de \(-\frac{\pi}{4}\) a \(\frac{\pi}{4}\)) y luego multiplicar por 2:
+\[
+A_{\text{total}} = 2 \cdot a^2 \int_{-\pi/4}^{\pi/4} \cos(2\theta) \, d\theta
+\]
+
+\subsection*{Paso 3: Resolver la integral}
+
+Sabemos que \(\int \cos(2\theta) \, d\theta = \frac{1}{2} \sin(2\theta)\):
+\[
+A_{\text{total}} = 2 \cdot a^2 \left[ \frac{1}{2} \sin(2\theta) \right]_{-\pi/4}^{\pi/4}
+\]
+
+Evaluamos los límites:
+\[
+\sin(2\theta) \text{ en } \theta = \frac{\pi}{4} \text{ es } \sin\left(\frac{\pi}{2}\right) = 1
+\]
+\[
+\sin(2\theta) \text{ en } \theta = -\frac{\pi}{4} \text{ es } \sin\left(-\frac{\pi}{2}\right) = -1
+\]
+
+Por lo tanto:
+\[
+A_{\text{total}} = 2 \cdot a^2 \cdot \frac{1}{2} \left(1 - (-1)\right)
+\]
+
+\[
+A_{\text{total}} = 2 \cdot a^2
+\]
+
+\subsection*{Respuesta final}
+
+El área total delimitada por la lemniscata es:
+\[
+A = 2a^2
+\]
