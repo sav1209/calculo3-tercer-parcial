@@ -1,71 +1,61 @@
-\documentclass[12pt]{article}
-\usepackage{amsmath}
-\usepackage[a4paper, left=2cm, right=2cm, top=2cm, bottom=2cm]{geometry}
+Sea \( T : \mathbb{R}^3 \to \mathbb{R}^3 \) definida por:
+\[
+T(u, v, w) = (u \cos v \cos w, u \sin v \cos w, u \sin w).
+\]
 
-\begin{document}
-	
-	\section*{Ejercicio 20}
-	
-	Sea \( T : \mathbb{R}^3 \to \mathbb{R}^3 \) definida por:
-	\[
-	T(u, v, w) = (u \cos v \cos w, u \sin v \cos w, u \sin w).
-	\]
-	
-	\section*{(a) \( T \) está sobre la esfera unitaria}
-	Para demostrar que cualquier punto \( (x, y, z) \) tal que \( x^2 + y^2 + z^2 = 1 \) puede escribirse como \( (x, y, z) = T(u, v, w) \) para algún \( (u, v, w) \).
-	
-	\subsection*{Expresamos \( x^2 + y^2 + z^2 \) en términos de \( T \)}
-	Sea \( (x, y, z) = T(u, v, w) \), es decir:
-	\[
-	x = u \cos v \cos w, \quad y = u \sin v \cos w, \quad z = u \sin w.
-	\]
-	Entonces, el cuadrado de la norma es:
-	\[
-	x^2 + y^2 + z^2 = (u \cos v \cos w)^2 + (u \sin v \cos w)^2 + (u \sin w)^2.
-	\]
-	Agrupando términos, tenemos:
-	\[
-	x^2 + y^2 + z^2 = u^2 \cos^2 w (\cos^2 v + \sin^2 v) + u^2 \sin^2 w.
-	\]
-	Como \( \cos^2 v + \sin^2 v = 1 \), se simplifica a:
-	\[
-	x^2 + y^2 + z^2 = u^2 \cos^2 w + u^2 \sin^2 w.
-	\]
-	Usando \( \cos^2 w + \sin^2 w = 1 \), obtenemos:
-	\[
-	x^2 + y^2 + z^2 = u^2.
-	\]
-	
-	\subsection*{Relación con la esfera unitaria}
-	Para que \( x^2 + y^2 + z^2 = 1 \), es necesario que \( u^2 = 1 \), lo cual implica \( u = \pm 1 \). 
-	
-	Dado un punto \( (x, y, z) \) con \( x^2 + y^2 + z^2 = 1 \), podemos escribir:
-	\[
-	u = \pm 1, \quad v = \tan^{-1}\left(\frac{y}{x}\right), \quad w = \sin^{-1}(z/u).
-	\]
-	Por lo tanto, con esto demostramos que cualquier punto en la esfera unitaria puede escribirse como \( T(u, v, w) \) para algún \( (u, v, w) \).
-	
-	\section*{(b) \( T \) no es uno a uno}
-	Para demostrar que \( T(u, v, w) \) no es inyectiva, es decir, que existen \( (u_1, v_1, w_1) \neq (u_2, v_2, w_2) \) tales que \( T(u_1, v_1, w_1) = T(u_2, v_2, w_2) \).
-	
-	\subsection*{Igualdad bajo \( T \)}
-	Supongamos que \( T(u_1, v_1, w_1) = T(u_2, v_2, w_2) \). Entonces:
-	\[
-	(u_1 \cos v_1 \cos w_1, u_1 \sin v_1 \cos w_1, u_1 \sin w_1) = (u_2 \cos v_2 \cos w_2, u_2 \sin v_2 \cos w_2, u_2 \sin w_2).
-	\]
-	Esto implica que:
-	\[
-	u_1 \cos v_1 \cos w_1 = u_2 \cos v_2 \cos w_2, \quad
-	u_1 \sin v_1 \cos w_1 = u_2 \sin v_2 \cos w_2, \quad
-	u_1 \sin w_1 = u_2 \sin w_2.
-	\]
-	
-	Notemos que:
-	\begin{itemize}
-		\item Si \( u_1 = -u_2 \), entonces \( T(u_1, v_1, w_1) = T(u_2, v_2, w_2) \), ya que \( u \) solo escala las coordenadas de acuerdo con la definición de \( T \).
-		\item Además, los ángulos \( v \) y \( w \) son periódicos. Por ejemplo, \( v_1 = v_2 + 2\pi k \) y \( w_1 = w_2 + 2\pi k \) generan las mismas coordenadas bajo \( T \).
-	\end{itemize}
-	
-	Por lo tanto, \( T(u, v, w) \) no es inyectiva porque existen múltiples valores de \( (u, v, w) \) que producen el mismo punto \( (x, y, z) \).
-	
-\end{document}
+\section*{(a) \( T \) está sobre la esfera unitaria}
+Para demostrar que cualquier punto \( (x, y, z) \) tal que \( x^2 + y^2 + z^2 = 1 \) puede escribirse como \( (x, y, z) = T(u, v, w) \) para algún \( (u, v, w) \).
+
+\subsection*{Expresamos \( x^2 + y^2 + z^2 \) en términos de \( T \)}
+Sea \( (x, y, z) = T(u, v, w) \), es decir:
+\[
+x = u \cos v \cos w, \quad y = u \sin v \cos w, \quad z = u \sin w.
+\]
+Entonces, el cuadrado de la norma es:
+\[
+x^2 + y^2 + z^2 = (u \cos v \cos w)^2 + (u \sin v \cos w)^2 + (u \sin w)^2.
+\]
+Agrupando términos, tenemos:
+\[
+x^2 + y^2 + z^2 = u^2 \cos^2 w (\cos^2 v + \sin^2 v) + u^2 \sin^2 w.
+\]
+Como \( \cos^2 v + \sin^2 v = 1 \), se simplifica a:
+\[
+x^2 + y^2 + z^2 = u^2 \cos^2 w + u^2 \sin^2 w.
+\]
+Usando \( \cos^2 w + \sin^2 w = 1 \), obtenemos:
+\[
+x^2 + y^2 + z^2 = u^2.
+\]
+
+\subsection*{Relación con la esfera unitaria}
+Para que \( x^2 + y^2 + z^2 = 1 \), es necesario que \( u^2 = 1 \), lo cual implica \( u = \pm 1 \). 
+
+Dado un punto \( (x, y, z) \) con \( x^2 + y^2 + z^2 = 1 \), podemos escribir:
+\[
+u = \pm 1, \quad v = \tan^{-1}\left(\frac{y}{x}\right), \quad w = \sin^{-1}(z/u).
+\]
+Por lo tanto, con esto demostramos que cualquier punto en la esfera unitaria puede escribirse como \( T(u, v, w) \) para algún \( (u, v, w) \).
+
+\section*{(b) \( T \) no es uno a uno}
+Para demostrar que \( T(u, v, w) \) no es inyectiva, es decir, que existen \( (u_1, v_1, w_1) \neq (u_2, v_2, w_2) \) tales que \( T(u_1, v_1, w_1) = T(u_2, v_2, w_2) \).
+
+\subsection*{Igualdad bajo \( T \)}
+Supongamos que \( T(u_1, v_1, w_1) = T(u_2, v_2, w_2) \). Entonces:
+\[
+(u_1 \cos v_1 \cos w_1, u_1 \sin v_1 \cos w_1, u_1 \sin w_1) = (u_2 \cos v_2 \cos w_2, u_2 \sin v_2 \cos w_2, u_2 \sin w_2).
+\]
+Esto implica que:
+\[
+u_1 \cos v_1 \cos w_1 = u_2 \cos v_2 \cos w_2, \quad
+u_1 \sin v_1 \cos w_1 = u_2 \sin v_2 \cos w_2, \quad
+u_1 \sin w_1 = u_2 \sin w_2.
+\]
+
+Notemos que:
+\begin{itemize}
+	\item Si \( u_1 = -u_2 \), entonces \( T(u_1, v_1, w_1) = T(u_2, v_2, w_2) \), ya que \( u \) solo escala las coordenadas de acuerdo con la definición de \( T \).
+	\item Además, los ángulos \( v \) y \( w \) son periódicos. Por ejemplo, \( v_1 = v_2 + 2\pi k \) y \( w_1 = w_2 + 2\pi k \) generan las mismas coordenadas bajo \( T \).
+\end{itemize}
+
+Por lo tanto, \( T(u, v, w) \) no es inyectiva porque existen múltiples valores de \( (u, v, w) \) que producen el mismo punto \( (x, y, z) \).
