@@ -1,0 +1,51 @@
+Usando coordenadas polares para el disco vamos a tener la integral sobre $[0, 1] \times [0, 2\pi]$. \\\\ 
+La coordenadas polares para el disco unitario serían 
+\begin{center}
+    $x = r cos \theta$, \\
+    \vspace{5 pt}
+    $y = r sen \theta$, \\
+    \vspace{5 pt}
+    $x^2 + y^2  = r^2 \Rightarrow dxdy = rdrd\theta$\\
+\end{center}
+\vspace{15 pt}
+Los límites de integración quedan como
+\begin{center}
+    $0 < r \leq 1, \hspace{3 pt} 0 < \theta \leq 2\pi$
+\end{center}
+\vspace{15 pt}
+Y nos queda la integral de la forma 
+\begin{center}
+    $\displaystyle \int_{\theta = 0}^{2\pi}\int_{r = 0}^1 (1 + r^2)^{\frac{3}{2}} rdrd\theta$
+\end{center}
+\vspace{15 pt}
+Ahora, sustituimos $1 + r^2 = p^2$ y utilizamos cambio de variable para integrar.
+\begin{center}
+    $\displaystyle \int_0^{2\pi}\int_{p=1}^{\sqrt{2}} (p^2)^{\frac{3}{2}}$
+\end{center}
+\vspace{15 pt}
+Cambiando tambien los límites de integración
+\begin{center}
+    $r = 0 \Rightarrow p = \sqrt{1} = 1$\\
+    $r = 1 \Rightarrow p = \sqrt{2}$\\
+\end{center}
+\vspace{15 pt}
+Desarrollando tenemos que 
+\begin{center}
+    $\displaystyle = \int_0^{2\pi}\int_{p=1}^{\sqrt{2}} p^3 \cdot p \hspace{3 pt}dpd\theta$\\
+    \vspace{10 pt}
+    $\displaystyle = \int_0^{2\pi}\int_{p=1}^{\sqrt{2}} p^4 \hspace{3 pt}dpd\theta$\\
+    \vspace{10 pt}
+    $\displaystyle = \int_0^{2\pi} \hspace{3 pt} d\theta\cdot \int_1^{\sqrt{2}} p^4\hspace{3 pt} dp$\\
+    \vspace{10 pt}
+    $\displaystyle = 2\pi \cdot \int_1^{\sqrt{2}} p^4 \hspace{3 pt} dp$\\
+    \vspace{10 pt}
+    $\displaystyle = 2\pi \cdot \frac{p^5}{5} \Big|_1^{\sqrt{2}}$\\
+    \vspace{10 pt}
+    $\displaystyle = 2\pi \cdot \frac{1}{5}((\sqrt{2})^5 - 1^5)$\\
+\end{center}
+\vspace{15 pt}
+Así podemos concluir que el resultado es:
+\begin{center}
+    $\boxed{\frac{2\pi}{5} (4\sqrt{2} - 1)}$
+\end{center}
+\vspace{15 pt}
