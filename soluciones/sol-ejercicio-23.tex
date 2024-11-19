@@ -2,16 +2,16 @@ Soluciōn
 Para resolver nuestra integral haremos un cambio de variables a coordenadas esfericas dönde:
 $$
 \begin{array}{ll}
-x=p \operatorname{sen} \phi \cos \theta & d x d y d z=p^2 \operatorname{sen} \phi d p d \phi d \theta \\
-y=p \operatorname{sen} \phi \operatorname{sen} \theta & p^2=x^2+y^2+z^2 . \\
-z=p \cos \phi & 1
+x=\phi \operatorname{sen} \phi \cos \theta & d x d y d z=p^2 \operatorname{sen} \phi d p d \phi d \theta \\
+y=\phi \operatorname{sen} \phi \operatorname{sen} \theta & p^2=x^2+y^2+z^2 . \\
+z=\phi \cos \phi & 1
 \end{array}
 $$
 
-Al ser $B$ una bola unitaria, definimos nuestros limites de, la siguiente forma
+Al ser $B$ una bola unitaria, definimos nuestros limites de la siguiente forma
 $$
 \begin{aligned}
-& 0 \leq p \leq 1 \\
+& 0 \leq \phi \leq 1 \\
 & 0 \leq \theta \leq 2 \pi \\
 & 0 \leq \Phi \leq \pi
 \end{aligned}
@@ -20,18 +20,47 @@ $$
 Reescribiendo la integral:
 $$
 \begin{aligned}
-& \iiint_B \frac{d x d y d z}{\sqrt{2+x^2+y^2+2}}=\int_0^{2 \pi} \int_0^\pi \int_0^1 \frac{p^2 \operatorname{sen} \phi}{\sqrt{2+p^2}} d p d \Phi d \theta
+& \iiint_B \frac{d x d y d z}{\sqrt{2+x^2+y^2+z^2}=\int_0^{2 \pi} \int_0^\pi \int_0^1 \frac{\phi^2 \operatorname{sen} \phi}{\sqrt{2+p^2}} d p d \Phi d \theta
 \end{aligned}
 $$
 
-Solucion ando
+Solucionando
 $$
 \begin{aligned}
 & \text { olucion ando } \\
-& \int_0^1 \frac{p^2 \operatorname{sen} \phi}{\sqrt{2+p^2}} d \rho \Rightarrow \operatorname{sen} \phi \int_0^1 \frac{p^2}{\sqrt{2+p^2}} d p .
+& \int_0^1 \frac{p^2 \operatorname{sen} \phi}{\sqrt{2+\phi^2}} d \rho \Rightarrow \operatorname{sen} \phi \int_0^1 \frac{\phi^2}{\sqrt{2+\phi^2}} d \phi.
 \end{aligned}
 $$
 definimos a
 $$
-d e \operatorname{finimos} a
+Phi=\sqrt{2} \tan (u) \Rightarrow u=\arctan \left(\frac{phi}{u}\right), \quad d phi=\sqrt{2} \sec ^2(u) d u
+$$
+
+Realizamos la sustitución en nuestra integral
+$$
+\begin{aligned}
+& \int \frac{2^{3 / 2} \sec ^2(u) \tan ^2(u)}{\sqrt{2 \tan ^2(u)+2}} d u \\
+& 2 \tan ^2(u)+2=2 \sec ^2(u) \\
+\Rightarrow & \int \frac{2^{3 / 2} \sec ^2(u) \tan ^2(u)}{\sqrt{2 \tan ^2(u)+2}}=2 \int \sec (u) \tan ^2(u) d u \\
+& \tan ^2(u)=\sec ^2(u)-1 \\
+\Rightarrow & 2 \int \sec ^3(u)-\sec (u) d u
+\end{aligned}
+$$
+
+Aplicando linealidad
+$$
+\begin{aligned}
+& 2\left[\int \sec ^3(u) d u-\int \sec (u) d u\right] \\
+& \text { Resolviendo } \\
+& \int \sec ^3(u) d u= \frac{\sec (u) \tan (u)}{2}+\frac{1}{2} \int \sec (u) d u \\
+& \text { Resolviendo } \\
+& \int \sec (u) d u=\ln (\tan (u)+\sec (u))
+\end{aligned}
+$$
+\begin{aligned}
+& \text { Reemplazamos las soluciones } \\
+& 2 \int \sec (u) \tan ^2(u) d u \\
+& -2\left[\frac{\sec (u) \tan (u)}{2}+\frac{\ln (\tan (u)+\sec (u)}{2}-\ln (\tan (u)+\sec (u))]\right. \\
+& =\sec (u) \tan (u)-\ln (\tan ( u)+\sec (u))
+\end{aligned}
 $$
