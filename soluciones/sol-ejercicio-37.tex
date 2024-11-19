@@ -1,0 +1,94 @@
+\section*{Parametrización de la región \( D \)}
+
+La región \( D \) está definida por la ecuación:
+\[
+x^{3/2} + y^{3/2} = a^{3/2}, \quad \text{para } x \geq 0 \text{ y } y \geq 0.
+\]
+Consideramos todos los puntos \( (x, y) \) en el primer cuadrante que satisfacen esta restricción. Los ejes coordenados proporcionan límites, formando una región delimitada en el primer cuadrante.
+
+\section*{Transformación de variables}
+
+Realizamos un cambio de variables para simplificar la región \( D \). Sea:
+\[
+u = x^{3/2}, \quad v = y^{3/2}.
+\]
+La transformación resulta en:
+\[
+x = u^{2/3}, \quad y = v^{2/3}.
+\]
+En consecuencia, la ecuación original \( x^{3/2} + y^{3/2} = a^{3/2} \) se transforma en:
+\[
+u + v = a^{3/2}.
+\]
+
+\section*{La región \( D^* \) en las nuevas variables}
+
+La región \( D^* \) está definida como:
+\[
+0 \leq u \leq a^{3/2}, \quad 0 \leq v \leq a^{3/2} - u.
+\]
+Esto produce una región triangular en el espacio \( (u, v) \), delimitada por la línea \( u + v = a^{3/2} \) y los ejes coordenados.
+
+\section*{Jacobiano de la transformación}
+
+Necesitamos calcular el Jacobiano de la transformación para reescribir el elemento de área \( dx \, dy \). La transformación \( x = u^{2/3}, \, y = v^{2/3} \) nos lleva a las derivadas parciales:
+\[
+\frac{\partial x}{\partial u} = \frac{2}{3} u^{-1/3}, \quad
+\frac{\partial y}{\partial v} = \frac{2}{3} v^{-1/3}.
+\]
+Esto resulta en el determinante del Jacobiano:
+\[
+J = \begin{vmatrix}
+\frac{2}{3} u^{-1/3} & 0 \\
+0 & \frac{2}{3} v^{-1/3}
+\end{vmatrix} = \frac{4}{9} u^{-1/3} v^{-1/3}.
+\]
+
+\section*{Expresión de la integral sobre \( D^* \)}
+
+Finalmente, expresamos la integral doble sobre la región \( D \) como una integral sobre \( D^* \). La integral se convierte en:
+\[
+\iint_D f(x, y) \, dx \, dy = \int_0^{a^{3/2}} \int_0^{a^{3/2} - u} f(u^{2/3}, v^{2/3}) \cdot \frac{4}{9} u^{-1/3} v^{-1/3} \, dv \, du.
+\]
+Cada \( (x, y) \) corresponde a un par \( (u, v) \), transformando los límites e involucrando el Jacobiano.
+
+\section*{Conceptos clave}
+
+\subsection*{Cambio de variables}
+
+Para resolver integrales dobles complejas, un cambio de variables puede simplificar la integración. En este tema, transformamos las variables de integración del sistema de coordenadas original a uno nuevo, con el propósito de simplificar la región y el cálculo.
+
+En este caso, la región original está definida por la ecuación \( x^{3/2} + y^{3/2} = a^{3/2} \). Al introducir las nuevas variables \( u = x^{3/2} \) y \( v = y^{3/2} \), la ecuación se transforma en \( u + v = a^{3/2} \), convirtiendo la región en una forma más manejable.
+
+Las nuevas variables \( u \) y \( v \) describen una región triangular. Este cambio de variables es una herramienta efectiva para navegar por regiones complejas en integrales dobles.
+
+\subsection*{Jacobiano}
+
+El Jacobiano es esencial al realizar un cambio de variables en integrales dobles. Ajusta el factor de escala que ocurre durante la transformación. Básicamente, al cambiar de sistemas de coordenadas, los elementos de área \( dx \, dy \) se transforman en \( du \, dv \) mediante un factor de escala llamado determinante del Jacobiano.
+
+En nuestra transformación de \( (x, y) \) a \( (u, v) \), el Jacobiano se deriva de las derivadas parciales:
+\[
+\frac{\partial x}{\partial u} = \frac{2}{3} u^{-1/3}, \quad
+\frac{\partial y}{\partial v} = \frac{2}{3} v^{-1/3}.
+\]
+La matriz Jacobiana es diagonal, y el determinante del Jacobiano es:
+\[
+J = \frac{4}{9} u^{-1/3} v^{-1/3}.
+\]
+
+Este determinante se utiliza en la integral transformada para ajustar el cambio en la escala del área de un sistema de coordenadas a otro.
+
+\section*{Parametrización}
+
+La parametrización implica expresar una región geométrica en términos de un conjunto diferente de variables. Es una técnica utilizada para mapear regiones complicadas en formas paramétricas más simples.
+
+Para la región dada \( D \), la ecuación \( x^{3/2} + y^{3/2} = a^{3/2} \) se parametriza mediante \( u \) y \( v \), con la transformación:
+\[
+x = u^{2/3}, \quad y = v^{2/3}.
+\]
+Esto convierte la condición de frontera en:
+\[
+u + v = a^{3/2}.
+\]
+
+Esta parametrización redefine \( D \) en una región triangular más simple \( D^* \) en el espacio \( (u, v) \). Así, la parametrización se alinea estrechamente con el cambio de variables y es una herramienta efectiva para integrales dobles.
