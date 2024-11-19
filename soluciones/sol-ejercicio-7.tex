@@ -1,0 +1,93 @@
+Como \(T(u,v) = (u, v/2)\) en \(T(D^*) = D\), la transformación \(T\) es \(x = u\) y \(y = v/2\). 
+
+La transformación \(T\) está dada por el determinante \( \neq 0 \). El primer paso es encontrar el determinante Jacobiano de \(T\) para el cambio de variable. 
+
+El determinante Jacobiano de \(T\) es:
+
+\[
+\frac{\partial(x,y)}{\partial(u,v)} = 
+\begin{vmatrix} 
+\frac{\partial x}{\partial u} & \frac{\partial x}{\partial v} \\ 
+\frac{\partial y}{\partial u} & \frac{\partial y}{\partial v} 
+\end{vmatrix}.
+\]
+
+Dado que \(x = u\) y \(y = v/2\),
+
+\[
+J = \frac{\partial(x,y)}{\partial(u,v)} = 
+\begin{vmatrix} 
+1 & 0 \\ 
+0 & 1/2 
+\end{vmatrix}.
+\]
+
+\[
+\text{Det} = (1)(1/2) - (0)(0) = 1/2 - 0 = 1/2.
+\]
+
+El área de \(D = T(D^*)\) se obtiene integrando el valor absoluto del Jacobiano:
+
+\[
+A(D) = \iint_D \mathrm{d}x \, \mathrm{d}y = \iint_{D^*} \left| \frac{\partial(x,y)}{\partial(u,v)} \right| \mathrm{d}u \, \mathrm{d}v.
+\]
+
+Como \(\text{Det} = 1/2\):
+
+- Para \(x\): Como \(u = x\), los límites de \(x \in [0,1]\) se convierten en \(u \in [0,1]\).
+- Para \(y\): Como \(v = 2y\), si \(y \in [0,1]\) entonces \(v \in [2(0), 2(1)] = [0,2]\).
+
+La integral:
+
+\[
+\iint_D \frac{\mathrm{d}x \, \mathrm{d}y}{\sqrt{1+x+2y}}, \quad D = [0,1] \times [0,1],
+\]
+
+se expresa en términos de \(u, v\):
+
+\[
+\int_0^2 \int_0^1 \frac{\mathrm{d}u \, \mathrm{d}v}{\sqrt{1+u+v}} \cdot \frac{1}{2}.
+\]
+
+Resolviendo la integral respecto a \(u\):
+
+\[
+\frac{1}{2} \int_0^2 \int_0^1 \frac{\mathrm{d}u \, \mathrm{d}v}{\sqrt{1+u+v}}.
+\]
+
+Sea \(w = 1 + v + u\), entonces \(\mathrm{d}w = \mathrm{d}u\),
+
+\[
+\int \frac{1}{w^{1/2}} \mathrm{d}w = \int w^{-1/2} \mathrm{d}w = 2w^{1/2} + C.
+\]
+
+\[
+\frac{1}{2} \int_0^2 \left[ 2\sqrt{1+v+u} \right]_0^1 \mathrm{d}v =
+\]
+
+\[
+\frac{1}{2} (2) \int_0^2 \left[ \sqrt{1+v+1} - \sqrt{1+v+0} \right] \mathrm{d}v =
+\]
+
+\[
+\int_0^2 \left[ \sqrt{2+v} - \sqrt{1+v} \right] \mathrm{d}v.
+\]
+
+Resolviendo la integral respecto a \(v\):
+
+Sea \(w = v+2\), \(\mathrm{d}w = \mathrm{d}v\), y \(z = v+1\), \(\mathrm{d}z = \mathrm{d}v\),
+
+\[
+\int w^{1/2} \mathrm{d}w = \frac{2w^{3/2}}{3} + C, \quad 
+\int z^{1/2} \mathrm{d}z = \frac{2z^{3/2}}{3} + C.
+\]
+
+Finalmente:
+
+\[
+\left[ \frac{2(v+2)^{3/2}}{3} - \frac{2(v+1)^{3/2}}{3} \right]_0^2 =
+\]
+
+\[
+\frac{(16 - 2\sqrt{8})}{3} - \frac{(2\sqrt{3} - 2)}{3} \approx 0.6502803018.
+\]
