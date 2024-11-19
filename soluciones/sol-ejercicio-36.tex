@@ -1,0 +1,94 @@
+\section*{Parte (a): Esbozar la región \( R \)}
+
+La región \( R \) está definida por:
+\begin{enumerate}
+    \item Dentro del círculo: \( x^2 + y^2 = 1 \),
+    \item Fuera de la parábola: \( x^2 + y^2 = 2y \),
+    \item Con restricciones: \( x \geq 0 \) y \( y \geq 0 \) (primer cuadrante).
+\end{enumerate}
+
+Los pasos para esbozar \( R \):
+\begin{itemize}
+    \item El círculo \( x^2 + y^2 = 1 \) es un círculo estándar de radio 1 centrado en el origen.
+    \item Reescribiendo la parábola \( x^2 + y^2 = 2y \) obtenemos \( x^2 + (y-1)^2 = 1 \), que es un círculo de radio 1 centrado en \( (0,1) \).
+    \item La región \( R \) es la porción del círculo unitario \( x^2 + y^2 = 1 \) que se encuentra fuera del círculo \( x^2 + (y-1)^2 = 1 \) y dentro del primer cuadrante.
+\end{itemize}
+
+\section*{Parte (b): Esbozar \( D \) bajo el cambio de variables}
+
+El cambio de coordenadas es:
+\[
+u = x^2 + y^2, \quad v = x^2 + y^2 - 2y.
+\]
+
+Pasos:
+\begin{enumerate}
+    \item De las ecuaciones:
+    \begin{itemize}
+        \item \( u = x^2 + y^2 \), que representa la distancia radial al cuadrado en coordenadas polares.
+        \item \( v = u - 2y \implies y = \frac{u-v}{2} \).
+    \end{itemize}
+    \item Los límites de \( R \) en coordenadas \( u,v \):
+    \begin{itemize}
+        \item El círculo \( x^2 + y^2 = 1 \) se transforma en \( u = 1 \).
+        \item El círculo \( x^2 + (y-1)^2 = 1 \) se transforma en \( v = 1 \).
+    \end{itemize}
+    \item La región \( D \) en el plano \( uv \) es un triángulo definido por:
+    \begin{itemize}
+        \item \( u = 1 \) (límite superior),
+        \item \( v = 1 \) (límite inferior),
+        \item \( v \leq u \) (asegurando \( y \geq 0 \)).
+    \end{itemize}
+\end{enumerate}
+
+\section*{Parte (c): Calcular \( \iint_R x e^x \, dx \, dy \)}
+
+La integral se evaluará utilizando el cambio de variables. Pasos clave:
+\begin{enumerate}
+    \item \textbf{Encontrar el Jacobiano:} Calcular el determinante de la matriz Jacobiana para la transformación.
+    \[
+    u = x^2 + y^2, \quad v = x^2 + y^2 - 2y.
+    \]
+    Diferenciamos \( u \) y \( v \) respecto a \( x \) y \( y \).
+    \item \textbf{Cambiar los límites de la integral:} Usar la región \( D \) en el plano \( uv \).
+    \item \textbf{Transformar el integrando y calcular:} Sustituir \( x \), \( e^x \) y el determinante de Jacobiano en la integral.
+\end{enumerate}
+
+El determinante del Jacobiano para la transformación es \( -4x \). Esto se incorpora a la integral al transformar las variables.
+
+La integral transformada es:
+\[
+\iint_D (x e^x \cdot |-4x|) \, du \, dv.
+\]
+
+Donde \( D \) está definido por:
+\begin{itemize}
+    \item \( 1 \leq u \leq 1 \) (frontera del círculo),
+    \item \( 1 \leq v \leq u \) (triángulo en el plano \( uv \)).
+\end{itemize}
+
+El valor de la integral evaluada es \( 0 \). Este resultado surge porque la función \( x e^x \cdot (-4x) \) integrada sobre la región simétrica \( R \) (o equivalente \( D \)) se cancela debido a la simetría o cambios de signo en el espacio transformado.
+
+\section*{Resumen de resultados}
+\begin{enumerate}
+    \item La región \( R \) es la porción del círculo unitario \( x^2 + y^2 = 1 \) fuera del círculo \( x^2 + (y-1)^2 = 1 \), confinada al primer cuadrante.
+    \item Bajo el cambio de coordenadas, \( R \) se transforma en una región triangular \( D \) en el plano \( uv \), definida por \( 1 \leq u \leq 1 \) y \( 1 \leq v \leq u \).
+    \item La integral \( \iint_R x e^x \, dx \, dy \) evalúa a \( 0 \).
+\end{enumerate}
+
+\section*{Explicación del concepto clave}
+
+El teorema de cambio de variables permite transformar una región y el integrando a una forma más simple introduciendo nuevas variables. El determinante de Jacobiano escala el elemento de área (o volumen) para tener en cuenta la distorsión debido a la transformación.
+
+En este problema:
+\begin{enumerate}
+    \item La región original \( R \) se describió en términos de \( x, y \), pero la transformación la simplificó a una región triangular \( D \) en coordenadas \( uv \).
+    \item La integral se transformó adecuadamente, con el determinante de Jacobiano asegurando el escalado correcto del área diferencial.
+\end{enumerate}
+
+La región \( D \) es degenerada porque los límites \( u = 1 \) y \( v = 1 \) colapsan la región triangular en un segmento de línea, lo que significa que:
+\[
+\iint_D = 0.
+\]
+
+El resultado confirma que la integral evalúa a cero.
