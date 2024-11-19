@@ -1,0 +1,130 @@
+Definimos la región triangular. La región está limitada por tres líneas conectadas entre los vértices del triángulo:
+
+- Para \((0,0)\) y \((1,0)\):
+  \[
+  y = 0
+  \]
+
+- Para \((0,0)\) y \(\left(\frac{1}{2},\frac{1}{2}\right)\):
+  \[
+  y = x
+  \]
+
+- Para \((1,0)\) y \(\left(\frac{1}{2},\frac{1}{2}\right)\):\\
+  Pendiente: \(\frac{\Delta y}{\Delta x} = \frac{\frac{1}{2}-0}{\frac{1}{2}-1} = -1\),
+  \[
+  y = 1 - x
+  \]
+
+De aquí definimos los límites de integración:
+\[
+0 \leq x \leq 1, \quad 0 \leq y \leq 1-x
+\]
+
+Hasta ahora la integral queda como:
+\[
+\int_0^1 \int_0^{1-x} \cos\left(\pi \frac{x-y}{x+y}\right) \, dy \, dx
+\]
+
+Definimos las nuevas variables:
+\[
+u = x - y, \quad v = x + y
+\]
+
+Calculamos el Jacobiano para ajustar las diferenciales. Resolvemos el sistema:
+\[
+u = x - y, \quad v = x + y
+\]
+\[
+x = u + y
+\]
+
+Sustituyendo en \(v\):
+\[
+v = u + y + y = u + 2y \quad \rightarrow \quad y = \frac{v - u}{2}
+\]
+
+Sustituyendo en \(x = u + y\):
+\[
+x = u + \frac{v - u}{2} = \frac{v + u}{2}
+\]
+
+Para el Jacobiano:
+\[
+dx \, dy = 
+\begin{vmatrix}
+\frac{\partial(x)}{\partial(u)} & \frac{\partial(x)}{\partial(v)}\\
+\frac{\partial(y)}{\partial(u)} & \frac{\partial(y)}{\partial(v)}
+\end{vmatrix}
+\, dudv
+\]
+
+\[
+J =
+\begin{vmatrix}
+\frac{1}{2} & \frac{1}{2}\\
+-\frac{1}{2} & \frac{1}{2}
+\end{vmatrix}
+= \frac{1}{2}
+\]
+
+Transformamos los límites de la integral. Usamos los vértices originales:
+- Para \((0,0)\):
+  \[
+  u = x - y = 0, \quad v = x + y = 0 \quad \rightarrow \quad (u, v) = (0, 0)
+  \]
+
+- Para \((1,0)\):
+  \[
+  u = x - y = 1, \quad v = x + y = 1 \quad \rightarrow \quad (u, v) = (1, 1)
+  \]
+
+- Para \(\left(\frac{1}{2}, \frac{1}{2}\right)\):
+  \[
+  u = x - y = 0, \quad v = x + y = 1 \quad \rightarrow \quad (u, v) = (0, 1)
+  \]
+
+Por lo tanto:
+\[
+0 \leq v \leq 1, \quad 0 \leq u \leq v
+\]
+
+Con estos cambios, la integral queda como:
+\[
+\int_0^1 \int_0^{v} \cos\left(\pi \frac{u}{v}\right) \frac{1}{2} \, du \, dv
+\]
+\[
+= \frac{1}{2} \int_0^1 \int_0^{v} \cos\left(\pi \frac{u}{v}\right) \, du \, dv
+\]
+
+Ahora resolvemos la integral del tipo:
+\[
+\int \cos\left(\pi \frac{x}{y}\right) dx
+\]
+
+Por cambio de variable:
+\[
+u = \frac{\pi x}{y}, \quad du = \frac{\pi}{y} dx
+\]
+
+La solución es:
+\[
+\frac{y}{\pi} \int \cos(u) \, du = \frac{y}{\pi} \sin\left(\frac{\pi x}{y}\right) + C
+\]
+
+Aplicando a nuestra integral definida:
+\[
+\frac{1}{2} \int_0^1 \frac{v}{\pi} \sin\left(\frac{\pi u}{v}\right) \bigg|_0^v dv
+\]
+\[
+= \frac{1}{2} \int_0^1 \frac{v}{\pi} \left(\sin(\pi) - \sin(0)\right) dv
+\]
+\[
+= \frac{1}{2} \int_0^1 0 \, dv = 0
+\]
+
+Dado que el coseno es una función oscilatoria simétrica, los valores positivos y negativos se cancelan entre sí. Por lo tanto, el resultado es:
+
+\[
+\therefore \int_0^1 \int_0^{1-x} \cos\left(\pi \frac{x-y}{x+y}\right) \, dy \, dx = 0
+\]
