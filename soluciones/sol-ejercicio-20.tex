@@ -1,97 +1,71 @@
-\documentclass{article}
-\usepackage{amsmath, amssymb}
+\documentclass[12pt]{article}
+\usepackage{amsmath}
 \usepackage[a4paper, left=2cm, right=2cm, top=2cm, bottom=2cm]{geometry}
+
 \begin{document}
 	
-	\section*{Ejercicio 19}
+	\section*{Ejercicio 20}
 	
+	Sea \( T : \mathbb{R}^3 \to \mathbb{R}^3 \) definida por:
 	\[
-	\int\int_R (x + y)^2 e^{x - y} \, dx \, dy,
-	\]
-	Donde \( R \) está delimitada por las líneas \( x + y = 1 \), \( x + y = 4 \), \( x - y = -1 \), y \( x - y = 1 \).
-	
-	\subsection*{Cambio de variable}
-	Realizamos el cambio de variables:
-	\[
-	u = x + y, \quad v = x - y.
-	\]
-	Ahora bien, para asegurarnos de que el cambio es válido, debemos resolver el sistema $u=x+y$ y $v=x-y$ para $x$ y $y$:
-	\[
-	x = \frac{u + v}{2}, \quad y = \frac{u - v}{2}.
+	T(u, v, w) = (u \cos v \cos w, u \sin v \cos w, u \sin w).
 	\]
 	
-	Esto muestra que el cambio es invertible, es decir, cada par (u,v) corresponde a exactamente un par (x,y).\\
+	\section*{(a) \( T \) está sobre la esfera unitaria}
+	Para demostrar que cualquier punto \( (x, y, z) \) tal que \( x^2 + y^2 + z^2 = 1 \) puede escribirse como \( (x, y, z) = T(u, v, w) \) para algún \( (u, v, w) \).
 	
-	El jacobiano del cambio es:
+	\subsection*{Expresamos \( x^2 + y^2 + z^2 \) en términos de \( T \)}
+	Sea \( (x, y, z) = T(u, v, w) \), es decir:
 	\[
-	\frac{\partial(x, y)}{\partial(u, v)} = 
-	\begin{vmatrix}
-		\frac{\partial x}{\partial u} & \frac{\partial x}{\partial v} \\
-		\frac{\partial y}{\partial u} & \frac{\partial y}{\partial v}
-	\end{vmatrix} =
-	\begin{vmatrix}
-		\frac{1}{2} & \frac{1}{2} \\
-		\frac{1}{2} & -\frac{1}{2}
-	\end{vmatrix} = -\frac{1}{2}.
+	x = u \cos v \cos w, \quad y = u \sin v \cos w, \quad z = u \sin w.
 	\]
-	Por lo tanto, el valor absoluto del determinante es:
+	Entonces, el cuadrado de la norma es:
 	\[
-	\left| \frac{\partial(x, y)}{\partial(u, v)} \right| = \frac{1}{2}.
+	x^2 + y^2 + z^2 = (u \cos v \cos w)^2 + (u \sin v \cos w)^2 + (u \sin w)^2.
 	\]
-	
-	Entonces, el diferencial se ajusta como: $dx \, dy$ = $\frac{1}{2}$ $\, du \, dv$
-	
-	
-	\subsection*{Definimos la región en el plano \( (u, v) \)}
-	Las ecuaciones que delimitan la región \( R \) en términos de \( u \) y \( v \) son:
-	\begin{align*}
-		x + y &= u \quad \Rightarrow \quad u \in [1, 4], \\
-		x - y &= v \quad \Rightarrow \quad v \in [-1, 1].
-	\end{align*}
-	
-Por lo tanto, en el plano \( (u, v) \), la región \( R \) es un rectángulo con:
+	Agrupando términos, tenemos:
 	\[
-	1 \leq u \leq 4, \quad -1 \leq v \leq 1.
+	x^2 + y^2 + z^2 = u^2 \cos^2 w (\cos^2 v + \sin^2 v) + u^2 \sin^2 w.
+	\]
+	Como \( \cos^2 v + \sin^2 v = 1 \), se simplifica a:
+	\[
+	x^2 + y^2 + z^2 = u^2 \cos^2 w + u^2 \sin^2 w.
+	\]
+	Usando \( \cos^2 w + \sin^2 w = 1 \), obtenemos:
+	\[
+	x^2 + y^2 + z^2 = u^2.
 	\]
 	
-	\subsection*{Reescribimos la integral aplicando el cambio de variable}
-	Al realizar el cambio, la integral queda de la siguiente manera:
+	\subsection*{Relación con la esfera unitaria}
+	Para que \( x^2 + y^2 + z^2 = 1 \), es necesario que \( u^2 = 1 \), lo cual implica \( u = \pm 1 \). 
+	
+	Dado un punto \( (x, y, z) \) con \( x^2 + y^2 + z^2 = 1 \), podemos escribir:
 	\[
-	 \int_{u=1}^{4} \int_{v=-1}^{1} u^2 e^v \cdot \frac{1}{2} \, dv \, du.
+	u = \pm 1, \quad v = \tan^{-1}\left(\frac{y}{x}\right), \quad w = \sin^{-1}(z/u).
+	\]
+	Por lo tanto, con esto demostramos que cualquier punto en la esfera unitaria puede escribirse como \( T(u, v, w) \) para algún \( (u, v, w) \).
+	
+	\section*{(b) \( T \) no es uno a uno}
+	Para demostrar que \( T(u, v, w) \) no es inyectiva, es decir, que existen \( (u_1, v_1, w_1) \neq (u_2, v_2, w_2) \) tales que \( T(u_1, v_1, w_1) = T(u_2, v_2, w_2) \).
+	
+	\subsection*{Igualdad bajo \( T \)}
+	Supongamos que \( T(u_1, v_1, w_1) = T(u_2, v_2, w_2) \). Entonces:
+	\[
+	(u_1 \cos v_1 \cos w_1, u_1 \sin v_1 \cos w_1, u_1 \sin w_1) = (u_2 \cos v_2 \cos w_2, u_2 \sin v_2 \cos w_2, u_2 \sin w_2).
+	\]
+	Esto implica que:
+	\[
+	u_1 \cos v_1 \cos w_1 = u_2 \cos v_2 \cos w_2, \quad
+	u_1 \sin v_1 \cos w_1 = u_2 \sin v_2 \cos w_2, \quad
+	u_1 \sin w_1 = u_2 \sin w_2.
 	\]
 	
-	\[
-	 \frac{1}{2} \int_{u=1}^{4} \int_{v=-1}^{1} u^2 e^v \, dv \, du.
-	\]
+	Notemos que:
+	\begin{itemize}
+		\item Si \( u_1 = -u_2 \), entonces \( T(u_1, v_1, w_1) = T(u_2, v_2, w_2) \), ya que \( u \) solo escala las coordenadas de acuerdo con la definición de \( T \).
+		\item Además, los ángulos \( v \) y \( w \) son periódicos. Por ejemplo, \( v_1 = v_2 + 2\pi k \) y \( w_1 = w_2 + 2\pi k \) generan las mismas coordenadas bajo \( T \).
+	\end{itemize}
 	
-	\subsection*{Resolver la integral}
-	\subsubsection*{Integral respecto a \( v \):}
-	\[
-	\int_{v=-1}^1 e^v \, dv = \left[ e^v \right]_{v=-1}^1 = e^1 - e^{-1}.
-	\]
-	
-	\subsubsection*{Sustituir en la integral respecto a \( u \):}
-	\[
-	 \frac{1}{2} \int_{u=1}^{4} u^2 (e - e^{-1}) \, du.
-	\]
-	Sacamos el factor constante \( (e - e^{-1}) \):
-	\[
-	 \frac{e - e^{-1}}{2} \int_{u=1}^{4} u^2 \, du.
-	\]
-	
-	\subsubsection*{Integramos respecto a \( u \) y evaluamos:}
-	\[
-	\int_{u=1}^{4} u^2 \, du = \left[ \frac{u^3}{3} \right]_{u=1}^{4} = \frac{4^3}{3} - \frac{1^3}{3} = \frac{64}{3} - \frac{1}{3} = \frac{63}{3} = 21.
-	\]
-	
-	\subsection*{Sustituimos el resultado}
-	\[
-	 \frac{e - e^{-1}}{2} \cdot 21 = \frac{21}{2} (e - e^{-1}).
-	\]
-	
-	\subsection*{Resultado:}
-	\[
-	\boxed{I = \frac{21}{2} (e - e^{-1})}.
-	\]
+	Por lo tanto, \( T(u, v, w) \) no es inyectiva porque existen múltiples valores de \( (u, v, w) \) que producen el mismo punto \( (x, y, z) \).
 	
 \end{document}
