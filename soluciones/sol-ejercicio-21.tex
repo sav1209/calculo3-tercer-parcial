@@ -1,0 +1,67 @@
+Primero representemos la region $C$ en coordenadas cilindricas como $C^*$, entonces por definición\begin{center}
+    $x = rcos\theta$\\
+    \vspace{0.3cm}
+    $y = rsen\theta$\\
+    \vspace{0.3cm}
+    $z = z$
+\end{center}Asi, $r$ y $\theta$ esta en\begin{center}
+    $r > 0, 0\leq \theta\leq 2\pi, z\in\mathbb{R}$
+\end{center}asi con el cambio de coordenadas cilindricas, después, obtenemos\begin{center}
+    $x^2+y^2\leq 2\Rightarrow  \left ( rcos\theta \right )^2+ \left ( rsen\theta \right )^2\leq2$\\
+    \vspace{0.3cm}
+    $\Rightarrow r^2 \left ( cos^2\theta + sen^2\theta \right )\leq 2$\\
+    \vspace{0.3cm}
+    $\Rightarrow r^2 \leq 2$
+\end{center}Asi por propiedades de orden, tenemos que $r$\begin{center}
+    $0<r\leq\sqrt{2}$
+\end{center}Por lo tanto, la región $C^*$ esta descrita como\begin{center}
+    $C^* = \left\{ (r,\theta,z) | 0<r\leq\sqrt{2} \wedge 0\leq\theta\leq 2\pi \wedge -2\leq z\leq 3 \right\}$
+\end{center}Ahora obtenemos el jacobiano, para ello, calculemos la jacobiana\begin{center}
+    $J = \displaystyle\frac{\partial(x, y, z)}{\partial(r, \theta, z)} = 
+        \begin{pmatrix}
+            \displaystyle\frac{\partial x}{\partial r} & \displaystyle\frac{\partial x}{\partial \theta} & \displaystyle\frac{\partial x}{\partial z} \\\\
+           \displaystyle \frac{\partial y}{\partial r} & \displaystyle\frac{\partial y}{\partial \theta} & \displaystyle\frac{\partial y}{\partial z} \\\\
+            \displaystyle\frac{\partial z}{\partial r} & \displaystyle\frac{\partial z}{\partial \theta} & \displaystyle\frac{\partial z}{\partial z} \\
+        \end{pmatrix}$
+\end{center}Calculando las parciales y reemplazando en la jacobiana obtenemos\begin{center}
+    $J = \begin{pmatrix}
+        \cos\theta & -r\sin\theta & 0 \\
+        \sin\theta & r\cos\theta & 0 \\
+        0 & 0 & 1 \\
+        \end{pmatrix}
+    $
+\end{center}Calculando el determinante obtenemos\begin{center}
+    $J = 
+        \begin{vmatrix}
+        \cos\theta & -r\sin\theta \\
+        \sin\theta & r\cos\theta \\
+        \end{vmatrix}$\\
+    \vspace{0.5cm}
+    $det(J) = \cos\theta \cdot (r\cos\theta) + (-r\sin\theta) \cdot (\sin\theta)$\\
+    \vspace{0.3cm}
+    $\Rightarrow det(J) = r (\cos^2\theta + \sin^2\theta) = r$
+\end{center}Por el cambio de variable, podemos decir que\begin{center}
+    $\displaystyle\iiint_C (x^2 + y^2 + z^2) \, dx \, dy \, dz = \iiint_{C^*} (r^2 + z^2) r \, dr \, d\theta \, dz.$
+\end{center}
+
+Asi, integrando tenemos\begin{center}
+    $\displaystyle\iiint_{C^*} (r^2 + z^2) r \, dr \, d\theta \, dz. = \displaystyle\int_{0}^{2\pi}\int_{-2}^{3}\int_{0}^{\sqrt{2}} (r^3+z^2r) dr dz d\theta$\\
+    \vspace{0.7cm}
+    $=\displaystyle\int_{0}^{2\pi}\int_{-2}^{3}\left [ \displaystyle\int_{0}^{\sqrt{2}} (r^3+z^2r) dr \right ] dzd\theta$\\
+    \vspace{0.7cm}
+    $=\displaystyle\int_{0}^{2\pi}\int_{-2}^{3} \left [ \displaystyle\frac{r^4}{4} + \frac{z^2r^2}{2} \right ]_{0}^{\sqrt{2}} dzd\theta$\\
+    \vspace{0.7cm}
+    $=\displaystyle\int_{0}^{2\pi}\int_{-2}^{3} (1+z^2)dzd\theta$\\
+    \vspace{0.7cm}
+    $\displaystyle\int_{0}^{2\pi} \left [ \displaystyle\int_{-2}^{3} (1+z^2) dz\right ] d\theta$\\
+    \vspace{0.7cm}
+    $=\displaystyle\int_{0}^{2\pi} d\theta \cdot \displaystyle\int_{-2}^{3} (1+z^2)dz$\\
+    \vspace{0.7cm}
+    $=\displaystyle2\pi\left [ z + \frac{z^3}{3} \right ]_{-2}^{3}$\\
+    \vspace{0.7cm}
+    $=\displaystyle 2\pi \left ( 3+9+2+\frac{8}{3} \right ) $\\
+    \vspace{0.7cm}
+    $=\displaystyle 2\pi\left ( 14 + \frac{8}{3} \right )  = 2\pi\cdot \frac{50}{3} = \frac{100\pi}{3}$
+\end{center}Asi podemos concluir que\begin{center}
+    $\displaystyle\iiint_C (x^2 + y^2 + z^2) \, dx \, dy \, dz = \frac{100\pi}{3}$
+\end{center}
