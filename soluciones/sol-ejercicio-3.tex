@@ -1,0 +1,66 @@
+\noindent La formula para cambiar a coordenadas polares es la siguiente:
+\begin{center}
+    $x=rcos(\theta)$     $y=rsen(\theta)$
+\end{center}
+
+\noindent Para "estabilizar" la región, hay que calcular el Jacobiano:
+\begin{center}
+    $J = det(\begin{bmatrix}
+        \frac{dx}{dr} & \frac{dx}{d\theta} \\
+        \frac{dy}{dr} & \frac{dy}{d\theta}
+    \end{bmatrix}$)
+    \vspace{6pt}
+
+    $J = det(\begin{bmatrix}
+        cos(\theta) & -rsen(\theta) \\
+        sen(\theta) & rcos(\theta)
+    \end{bmatrix}$)
+    \vspace{6pt}
+    
+    $\iff$ 
+    
+    $J = rcos^2(\theta) + rsen^2(\theta)$
+    \vspace{6pt}
+    
+    $\iff$
+    
+    $J = r(sen^2(\theta)+cos^2(\theta))$
+    \vspace{6pt}
+    
+    $\iff$ 
+    \vspace{6pt}
+    
+    $J = r$
+\end{center}
+
+\noindent Ahora cambiamos los indices de integración, al ser un disco, podemos usar la siguiente formula:
+\begin{center}
+    $0 \leq \theta \leq 2\pi$
+    \vspace{6pt}
+
+    $0 \leq r \leq radio$ $\iff$ $0 \leq r \leq 1$
+\end{center}
+
+\noindent Por lo que la integral se vería asi:
+    \begin{center}
+        $\displaystyle\iint\limits_{D*} rf(rcos\theta,rsen(\theta) \, dr \, d\theta$
+
+        =
+        \[\displaystyle\int\limits_0^{2\pi} \!\!\int\limits_0^1 \ re^{r^2cos^2(\theta) + r^2sen^2(\theta)} \, dr \, d\theta\]
+        $\iff$
+        \[\displaystyle\int\limits_0^{2\pi} \!\!\int\limits_0^1 \ re^{r^2(cos^2(\theta) + sen^2(\theta))} \, dr \, d\theta\]
+        $\iff$
+        \[\displaystyle\int\limits_0^{2\pi} \!\!\int\limits_0^1 \ re^{r^2} \, dr \, d\theta\]
+    \end{center} 
+
+\noindent Ya podemos comenzar a integrar:
+
+    \[\displaystyle\int\limits_0^{2\pi} \!\!\int\limits_0^1 \ re^{r^2} \, dr \, d\theta \]
+    \[\displaystyle u=r^2 \text{ , } \frac{du}{2}=rdr\]
+    \[\displaystyle  \int\limits_0^{2\pi} \!\!\frac{1}{2}\int\limits_0^1 \ e^u \, du \, d\theta = \int\limits_0^{2\pi} \frac{1}{2}e^{r^2}\bigg|_0^1 d\theta = \int\limits_0^{2\pi} \frac{e}{2}-\frac{1}{2} \,\, d\theta = \frac{1}{2} \int\limits_0^{2\pi} e-1 \,\, d\theta\]
+
+\noindent Que ya es una integral directa:
+
+    \[\displaystyle \frac{1}{2}\int\limits0^{2\pi} e-1 \,\, d\theta \,\, = \,\, \frac{1}{2}[e\theta - \theta]\bigg|_0^{2\pi} \,\, = \,\, \frac{2\pi e - 2\pi}{2} \,\, = \,\, \frac{2\pi(e-1)}{2} \,\, = \,\, \pi(e-1)\]
+
+\noindent El resultado es: $\pi(e-1)$
