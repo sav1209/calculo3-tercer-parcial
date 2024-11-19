@@ -1,0 +1,25 @@
+Tenemos que $dxdy = dA$
+
+Ahora bien, si $x^2 + y^2 \leq 4$
+$$x = \sqrt{4 - y^2} = \sqrt{4}$$
+$$x = \pm 2$$
+$$0 \leq x \leq 2$$
+$$y = \sqrt{4 - x^2} = \sqrt{4}$$
+$$y = \pm 2$$
+$$0 \leq y \leq 2$$
+
+Aplicamos coordenadas polares:
+$$x^2 + y^2 = r^2$$
+$$x^2 + y^2 \leq 4$$
+$$r^2 = 4$$
+$$r = \sqrt{4}$$
+$$r = 2$$
+
+Las funciones de movimiento de $0$ a $2\pi$ son un disco, entonces:
+$$dxdy = dA = rdrd\theta$$
+$$\int_0^2\int_0^{2\pi} (r^2)^{\frac{3}{2}} \ rd\theta dr$$
+$$= \int_0^2\int_0^{2\pi} r^3 \ rd\theta dr = \int_0^2\int_0^{2\pi} r^4 \ d\theta dr$$
+$$= \int_0^2 r^4\int_0^{2\pi} d\theta dr = \int_0^2 r^4 (\theta)\big|_0^{2\pi} dr$$
+$$= \int_0^2 r^4 \cdot (2\pi)dr$$
+$$= (2\pi) \cdot \int_0^2 r^4 = (2\pi) \cdot \frac{r^5}{5}\Big|_0^2$$
+$$= (2\pi) \cdot \frac{2^5}{5} = 2\pi \cdot \frac{32}{5} = \frac{64\pi}{5} $$ 
