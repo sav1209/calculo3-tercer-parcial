@@ -1,1 +1,89 @@
 Integrate $ze^{x^2 + y^2}$ over the cylinder $x^2 + y^2 \leq 4, 2 \leq z \leq 3$.
+\documentclass{article}
+\usepackage{amsmath, amssymb}
+
+\begin{document}
+
+Sea la integral
+\[
+\iiint ze^{x^2 + y^2} \, dx \, dy \, dz,
+\]
+con la región de integración definida por el cilindro \(x^2 + y^2 \leq 4\) y \(2 \leq z \leq 3\).
+
+\section*{1. Cambiar a coordenadas cilíndricas}
+
+En coordenadas cilíndricas:
+\[
+x = r\cos\theta, \quad y = r\sin\theta, \quad x^2 + y^2 = r^2,
+\]
+y el elemento diferencial se convierte en:
+\[
+dx \, dy \, dz = r \, dr \, d\theta \, dz.
+\]
+
+La función \(e^{x^2 + y^2}\) se convierte en \(e^{r^2}\). Por lo tanto, la integral en coordenadas cilíndricas es:
+\[
+\iiint ze^{x^2 + y^2} \, dx \, dy \, dz = \int_{0}^{2\pi} \int_{0}^{2} \int_{2}^{3} z e^{r^2} r \, dz \, dr \, d\theta.
+\]
+
+\section*{2. Separar la integral}
+
+Como la función se puede separar en términos de \(r\), \(\theta\) y \(z\), reescribimos la integral como:
+\[
+\int_{0}^{2\pi} d\theta \cdot \int_{0}^{2} e^{r^2}r \, dr \cdot \int_{2}^{3} z \, dz.
+\]
+
+\section*{3. Evaluar las integrales individuales}
+
+\subsection*{Integral en \(\theta\):}
+\[
+\int_{0}^{2\pi} d\theta = 2\pi.
+\]
+
+\subsection*{Integral en \(z\):}
+\[
+\int_{2}^{3} z \, dz = \left[\frac{z^2}{2}\right]_{2}^{3} = \frac{3^2}{2} - \frac{2^2}{2} = \frac{9}{2} - \frac{4}{2} = \frac{5}{2}.
+\]
+
+\subsection*{Integral en \(r\):}
+\[
+\int_{0}^{2} e^{r^2} r \, dr.
+\]
+Usamos la sustitución \(u = r^2\), por lo que \(du = 2r \, dr\), y los límites cambian:
+\[
+r = 0 \implies u = 0, \quad r = 2 \implies u = 4.
+\]
+
+La integral queda como:
+\[
+\int_{0}^{2} e^{r^2} r \, dr = \frac{1}{2} \int_{0}^{4} e^u \, du.
+\]
+
+Resolviendo:
+\[
+\frac{1}{2} \int_{0}^{4} e^u \, du = \frac{1}{2} \left[e^u\right]_{0}^{4} = \frac{1}{2} \left(e^4 - e^0\right) = \frac{1}{2} (e^4 - 1).
+\]
+
+\section*{4. Combinar los resultados}
+
+Ahora combinamos las integrales:
+\[
+\iiint ze^{x^2 + y^2} \, dx \, dy \, dz = \left(\int_{0}^{2\pi} d\theta\right) \cdot \left(\int_{0}^{2} e^{r^2} r \, dr\right) \cdot \left(\int_{2}^{3} z \, dz\right).
+\]
+
+Sustituyendo:
+\[
+\iiint ze^{x^2 + y^2} \, dx \, dy \, dz = 2\pi \cdot \frac{5}{2} \cdot \frac{1}{2} (e^4 - 1).
+\]
+
+Simplificando:
+\[
+\iiint ze^{x^2 + y^2} \, dx \, dy \, dz = 5\pi (e^4 - 1).
+\]
+
+\section*{Resultado final:}
+\[
+\boxed{5\pi (e^4 - 1)}.
+\]
+
+\end{document}
