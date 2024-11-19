@@ -1,0 +1,84 @@
+\section*{Paso 1: Entender la transformación a coordenadas esféricas}
+
+La transformación \( S(\rho, \theta, \phi) \) está definida como:
+\[
+S(\rho, \theta, \phi) = (x, y, z),
+\]
+donde:
+\[
+x = \rho \sin \phi \cos \theta, \quad y = \rho \sin \phi \sin \theta, \quad z = \rho \cos \phi.
+\]
+
+Aquí, las variables tienen las siguientes restricciones:
+\begin{itemize}
+    \item \( \rho \geq 0 \) (radio),
+    \item \( 0 \leq \phi \leq \pi \) (ángulo polar),
+    \item \( 0 \leq \theta < 2\pi \) (ángulo azimutal).
+\end{itemize}
+
+\section*{Paso 2: Condiciones para que sea inyectiva (uno a uno)}
+
+Para que la transformación sea uno a uno, debemos demostrar que si dos puntos en coordenadas esféricas se transforman al mismo punto en coordenadas cartesianas, entonces representan las mismas coordenadas esféricas. Esto requiere resolver:
+\[
+S(\rho_1, \theta_1, \phi_1) = S(\rho_2, \theta_2, \phi_2),
+\]
+o equivalentemente:
+\[
+\rho_1 \sin \phi_1 \cos \theta_1 = \rho_2 \sin \phi_2 \cos \theta_2,
+\]
+\[
+\rho_1 \sin \phi_1 \sin \theta_1 = \rho_2 \sin \phi_2 \sin \theta_2,
+\]
+\[
+\rho_1 \cos \phi_1 = \rho_2 \cos \phi_2.
+\]
+
+\section*{Paso 3: Análisis de los posibles casos}
+
+\begin{enumerate}
+    \item \textbf{Caso 1: \( \rho = 0 \)}\\
+    Cuando \( \rho = 0 \), todas las coordenadas esféricas mapean al origen \( (0, 0, 0) \). Por lo tanto, la transformación no es uno a uno en este punto.
+
+    \item \textbf{Caso 2: \( \rho > 0 \)}\\
+    En este caso, asumimos \( S(\rho_1, \theta_1, \phi_1) = S(\rho_2, \theta_2, \phi_2) \). Esto implica:
+    \[
+    \sin \phi_1 \cos \theta_1 = \sin \phi_2 \cos \theta_2, \quad
+    \sin \phi_1 \sin \theta_1 = \sin \phi_2 \sin \theta_2, \quad
+    \cos \phi_1 = \cos \phi_2.
+    \]
+    \begin{itemize}
+        \item De \( \cos \phi_1 = \cos \phi_2 \), se deduce que \( \phi_1 = \phi_2 \) o \( \phi_1 = \pi - \phi_2 \).
+        \item Sustituyendo \( \phi_1 = \phi_2 \), las ecuaciones para \( x \) e \( y \) se reducen a:
+        \[
+        \cos \theta_1 = \cos \theta_2, \quad \sin \theta_1 = \sin \theta_2.
+        \]
+        Esto implica que \( \theta_1 = \theta_2 \) (módulo \( 2\pi \)).
+        \item Para \( \phi_1 = \pi - \phi_2 \), obtenemos \( z_1 = -z_2 \). Este escenario corresponde a una simetría alrededor del eje \( z \), lo que significa que la transformación falla en ser uno a uno a lo largo de los polos (\( \phi = 0 \) y \( \phi = \pi \)).
+    \end{itemize}
+\end{enumerate}
+
+\section*{Paso 4: Identificar el conjunto problemático}
+
+La transformación \( S(\rho, \theta, \phi) \) no es uno a uno en los siguientes casos:
+\begin{itemize}
+    \item En el origen (\( \rho = 0 \)),
+    \item A lo largo de los ejes \( z \) positivo y negativo (\( \phi = 0 \) o \( \phi = \pi \)).
+\end{itemize}
+
+Estos conjuntos pueden describirse como gráficas de funciones continuas:
+\begin{itemize}
+    \item El punto \( \rho = 0 \) corresponde a una gráfica degenerada.
+    \item Los ejes \( \phi = 0 \) y \( \phi = \pi \) corresponden a relaciones continuas donde \( z = \pm \rho \).
+\end{itemize}
+
+\section*{Respuesta final}
+
+La transformación a coordenadas esféricas \( S(\rho, \theta, \phi) \) es uno a uno excepto en el conjunto \( \rho = 0 \) y la unión de los polos (\( \phi = 0 \) y \( \phi = \pi \)), los cuales son uniones de gráficas de funciones continuas.
+
+\section*{Concepto clave}
+
+El concepto clave es el comportamiento de las transformaciones a coordenadas esféricas y las condiciones bajo las cuales no son inyectivas.
+
+\section*{Explicación del concepto clave}
+
+Las coordenadas esféricas mapean un espacio tridimensional a ángulos polares y distancias radiales. Aunque la transformación es mayormente inyectiva (uno a uno), las degeneraciones surgen debido a la simetría a lo largo de ciertos ejes (\( \phi = 0, \pi \)) y en el origen (\( \rho = 0 \)). Estas excepciones corresponden a casos en los que diferentes coordenadas esféricas resultan en el mismo punto cartesiano.
