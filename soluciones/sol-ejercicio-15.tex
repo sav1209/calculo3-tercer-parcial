@@ -1,0 +1,96 @@
+Trabajando con coordenadas cilindricas tenemos que 
+\begin{center}
+    $x = r cos \theta$, \\
+    \vspace{5 pt}
+    $y = r sen \theta$, \\
+    \vspace{5 pt}
+    $z = z$, \\
+    \vspace{5 pt}
+    $0 < r \leq 2, \hspace{3 pt} 0 \leq \theta \leq 2 \pi, \hspace{3 pt} 2 \leq z \leq 3$, \\
+\end{center}
+\vspace{15 pt}
+Luego tenemos que 
+\begin{center}
+    $\Rightarrow x^2 + y^2  = (r cos\theta)^2 + (r sen\theta)^2  = r^2 (cos^2\theta +  sen^2 \theta) = r^2$
+\end{center}
+\vspace{15 pt}
+Ahora, la matriz de derivadas parciales de cambio de coordenadas, para coordenadas cilíndricas está dada por:
+\begin{center}
+    $\displaystyle J = \frac{\partial(x, y, z)}{\partial (r, \theta, z)} $\\
+    \vspace{10 pt}
+    = $\displaystyle\left|
+    \begin{array}{ccc}
+    \frac{\partial x}{\partial r} & \frac{\partial x}{\partial \theta} & \frac{\partial x}{\partial z} \\[10pt]
+    \frac{\partial y}{\partial r} & \frac{\partial y}{\partial \theta} & \frac{\partial y}{\partial z} \\[10pt]
+    \frac{\partial z}{\partial r} & \frac{\partial z}{\partial \theta} & \frac{\partial z}{\partial z}
+    \end{array}
+    \right|$\\
+    \vspace{10 pt}
+    = $\displaystyle\left|
+    \begin{array}{ccc}
+    cos\theta & -r sen\theta & 0 \\[5pt]
+    r sen\theta & rcos\theta & 0 \\[5pt]
+    0 & 0 & 1
+    \end{array}
+    \right|$\\
+    \vspace{10 pt}
+    = $\displaystyle\left|
+    \begin{array}{ccc}
+    cos\theta & -r sen\theta \\[5pt]
+    r sen\theta & rcos\theta 
+    \end{array}
+    \right|$\\
+    \vspace{10 pt}
+    $=\cos \theta \cdot r cos \theta + r sen \theta \cdot sen \theta$\\
+    \vspace{10 pt}
+    $= r (cos^2 \theta +  sen^2 \theta)$\\
+    \vspace{10 pt}
+    $= r$\\
+    \vspace{15 pt}
+    $\therefore |J| =  r$
+\end{center}
+\vspace{15 pt}
+Sea $V$ el cilindro $x^2 + y^2 \leq 4, \hspace{3 pt} 2 \leq z \leq 3$. 
+Ahora aplicamos cambio de variable para obtener
+\begin{center}
+$\displaystyle \int\int\int_V ze^{x^2 + y^2} dx \hspace{3 pt} dy \hspace{3 pt} dz = \int\int\int_{V^*} ze^{r^2} |J| \hspace{3 pt} dr \hspace{3 pt} d\theta\hspace{3 pt} dz$ \\
+\vspace{10 pt}
+con $V^* = \{(r, \theta, z) \in \mathbb{R}^3 \hspace{3 pt} | \hspace{3 pt} 0 < r \leq 2, \hspace{3 pt} 0 \leq \theta \leq 2 \pi, \hspace{3 pt} 2 \leq z \leq 3\}$.
+\end{center}
+\vspace{15 pt}
+Integramos entonces, 
+\begin{center}
+    $\displaystyle \int\int\int_{V^*} ze^{r^2} |J| \hspace{3 pt} dr \hspace{3 pt} d\theta\hspace{3 pt} dz = \int_2^3\int_0^{2\pi}\int_0^2 zre^{r^2}  \hspace{3 pt} dr \hspace{3 pt} d\theta\hspace{3 pt} dz$\\
+    \vspace{10 pt}
+    $\displaystyle = \int_3^3 \int_0^{2\pi} \left[ \int_0^2 z r e^{r^2} \, dr \right] \, d\theta \, dz$\\
+    \vspace{10 pt}
+    $\displaystyle =  \int_2^3 z \int_0^{2\pi}\left[ \int_0^2 r e^{r^2} \, dr \right] \, d\theta \, dz$\\
+    \vspace{10 pt}
+    $\displaystyle = \int_2^3 z \hspace{3 pt}dz \cdot \int_0^{2\pi} d\theta \cdot \int_0^2 re^{r^2} \hspace{3 pt} dr$\\
+    \vspace{10 pt}
+    $\displaystyle = \frac{z^2}{2} \Big|_2^3 \cdot [\theta]_0^{2\pi} \cdot \int_0^2 re^{r^2} \hspace{3 pt} dr$\\
+    \vspace{10 pt}
+    $\displaystyle = (\frac{9}{2} - \frac{4}{2}) \cdot 2\pi \cdot \int _0^2 re^{r^2} \hspace{3 pt} dr$\\
+    \vspace{10 pt}
+    $\displaystyle = \frac{5\pi}{2} \hspace{3 pt} \int_0^2 2re^{r^2} \hspace{3 pt} dr$
+\end{center}
+\vspace{15 pt}
+Aplicando la sustitución 
+\begin{center}
+    $\displaystyle t = r^2 \Rightarrow dt = 2r \hspace{3 pt} dr$\\
+    $\displaystyle a = 0 \Rightarrow 0$\\
+    $\displaystyle b  = 2 \Rightarrow 4$
+\end{center}
+\vspace{15 pt}
+Continuamos entonces  \begin{center}
+    $\displaystyle = \frac{5\pi^2}{2} \int_0^4 e^t \hspace{3 pt} dt$\\
+    \vspace{10 pt}
+    $\displaystyle = \frac{5\pi^2}{2} [e^t]^4_0$\\
+    \vspace{10 pt}
+    $\displaystyle = \frac{5\pi^2}{2} (e^4 - 1)$
+\end{center}
+\vspace{15 pt}
+Por lo que el resultado de la integral es: 
+\begin{center}
+    $\boxed{= \frac{5\pi^2}{2} (e^4 - 1)}$
+\end{center}
