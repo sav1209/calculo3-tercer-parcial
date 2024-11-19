@@ -1,0 +1,72 @@
+Por la condición \( x^2 + y^2 \leq 1 \), que asociamos a un círculo unitario, convendremos en usar coordenadas polares, donde:
+\[
+x = r \cos \theta \quad \text{y} \quad y = r \sin \theta \quad \text{y} \quad r^2 = x^2 + y^2
+\]
+Y también sabemos que la relación en la transformación de las diferenciales es:
+\[
+dx \, dy = r \, dr \, d\theta
+\]
+Ahora, para el cambio de variables tenemos que:
+\begin{itemize}
+    \item Para la condición \( x^2 + y^2 \leq 1 \) implica que \( 0 \leq r \leq 1 \).
+    \item Para la condición \( 0 \leq x \leq y \) implica que la relación \( \tan \theta = \frac{y}{x} \), es decir, \( 0 \leq \theta \leq \frac{\pi}{4} \).
+\end{itemize}
+
+Una vez hechos los cambios, nuestra integral quedaría como:
+\[
+\iint_D x^2 \, dx \, dy = \int_0^{\frac{\pi}{4}} \int_0^1 \left( r \cos \theta \right)^2 r \, dr \, d\theta
+\]
+Resolviendo, tenemos:
+\[
+\int_0^{\frac{\pi}{4}} \int_0^1 r^3 \cos^2 \theta \, dr \, d\theta
+\]
+\[
+\int_0^{\frac{\pi}{4}} \cos^2 \theta \cdot \frac{r^4}{4} \bigg|_0^1 \, d\theta
+\]
+\[
+\int_0^{\frac{\pi}{4}} \cos^2 \theta \left( \frac{1}{4} - \frac{0}{4} \right) \, d\theta
+\]
+\[
+\frac{1}{4} \int_0^{\frac{\pi}{4}} \cos^2 \theta \, d\theta
+\]
+Usaremos una identidad para \( \cos^2 \theta = \frac{1 + \cos(2\theta)}{2} \), lo sustituimos y tenemos:
+\[
+\frac{1}{4} \int_0^{\frac{\pi}{4}} \frac{1 + \cos(2\theta)}{2} \, d\theta
+\]
+\[
+\frac{1}{4} \left( \int_0^{\frac{\pi}{4}} \frac{1}{2} \, d\theta + \int_0^{\frac{\pi}{4}} \frac{\cos(2\theta)}{2} \, d\theta \right)
+\]
+\[
+\frac{1}{4} \left( \int_0^{\frac{\pi}{4}} \frac{1}{2} \, d\theta + \frac{1}{2} \int_0^{\frac{\pi}{4}} \cos(2\theta) \, d\theta \right)
+\]
+Para la integral del tipo \( \int \cos(2\theta) \, d\theta \), resolvemos por cambio de variable:
+\[
+u = 2\theta \quad \text{y} \quad du = 2 \, d\theta
+\]
+Obtenemos:
+\[
+\frac{1}{2} \int \cos(u) \, du = \frac{1}{2} \sin(u) = \frac{1}{2} \sin(2\theta)
+\]
+Sustituimos en la integral definida:
+\[
+\frac{1}{4} \left( \frac{\theta}{2} \bigg|_0^{\frac{\pi}{4}} + \frac{1}{2} \left( \frac{1}{2} \sin(2\theta) \bigg|_0^{\frac{\pi}{4}} \right) \right)
+\]
+\[
+= \frac{1}{4} \left( \frac{\pi}{8} + \frac{1}{4} \left( \sin\left(\frac{2\pi}{4}\right) - \sin(2 \cdot 0) \right) \right)
+\]
+\[
+= \frac{1}{4} \left( \frac{\pi}{8} + \frac{1}{4} (1 - 0) \right)
+\]
+\[
+= \frac{1}{4} \left( \frac{\pi}{8} + \frac{1}{4} \right)
+\]
+\[
+= \frac{1}{4} \left( \frac{4\pi + 8}{32} \right)
+\]
+\[
+= \frac{4\pi + 8}{4(32)} = \frac{\pi + 2}{32}
+\]
+
+\[
+\therefore \text{El área de la región } D \text{ es } \frac{\pi + 2}{32}
+\]
