@@ -1,0 +1,33 @@
+\noindent Primero vamos a calcular el Jacobiano:
+\begin{center}
+    $J = det(\begin{bmatrix}
+        1 & 1\\
+        1 & -1
+    \end{bmatrix}) = | (-1)-(1)| = 2$
+\end{center}
+\noindent El jacobiano va a multiplicar la función a integrar.
+\vspace{12pt}
+
+\noindent Ahora vamos a ver los nuevos indices, podemos usar desigualdades tal que:
+\begin{enumerate}
+    \item $0 \leq y \iff 0 \leq u-v \iff v \leq u$
+    \item $y \leq x \iff u-v \leq u+v \iff -2v \leq 0 \iff 0 \leq v$
+    \item $x \leq 1 \iff u+v \leq 1 \iff u \leq 1-v$
+    \item De 1 y 3: $v \leq u \leq 1-v \iff v\leq 1-v \iff v\leq \frac{1}{2}$ De 2: $0 \leq v \leq \frac{1}{2}$
+    \item De 1 y 3: $v \leq u \leq 1-v$
+\end{enumerate}
+\vspace{12pt}
+
+\noindent Ahora podemos plantear la nueva integral:
+
+\[\int\limits_0^{\frac{1}{2}} \int\limits_v^{1-v} 2(u+v)+(u-v) \,\, dudv = \int\limits_0^{\frac{1}{2}} \int\limits_v^{1-v} 4u \,\, dudv\]
+\vspace{12pt}
+
+\noindent Resolviendo:
+\[\int\limits_0^{\frac{1}{2}} \int\limits_v^{1-v} 4u \,\, dudv = \int\limits_0^{\frac{1}{2}} 2u^2 \bigg|_v^{1-v} \,\, dv \,\,\, = \,\,\, \int\limits_0^{\frac{1}{2}} 2(-2v+1) dv \,\,\, = \,\,\, \int\limits_0^{\frac{1}{2}} -4v+2 \, dv \,\,\, = \,\,\, -4(\frac{v^2}{2})+2v \,\,\, \]
+\[= \,\,\, -2v^2 + 2v \, \bigg|_0^{\frac{1}{2}} \,\,\, = \,\,\, -2(\frac{1}{4}) + 2(\frac{1}{2}) \,\,\, = \,\,\, -\frac{1}{2} + 1 \,\,\, = \,\,\, \frac{1}{2}\]
+\vspace{12pt}
+
+\textbf{COMPROBRACIÓN}
+\[\displaystyle\int\limits_0^1 \int\limits_0^x (x+y) \, dy \, dx = \int\limits_0^1 \, xy + \frac{y^2}{2} \, \bigg|_0^x \, dx = \int\limits_0^1 x^2 + \frac{x^2}{2} \, dx \,\,\, = \,\,\, \frac{x^3}{3} + \frac{x^3}{6} \, \bigg|_0^1\]
+\[\displaystyle = \frac{1}{3} + \frac{1}{6} \,\,\, = \,\,\, \frac{1}{2}\]
