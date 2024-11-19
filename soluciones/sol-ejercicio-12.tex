@@ -1,0 +1,40 @@
+Queremos demostrar que:
+$$\iint_D f(x, y) \ dx \ dy = \iint_{D^*} f(u, \psi(u, v))\begin{vmatrix}
+    \frac{\partial \psi}{\partial v}
+\end{vmatrix} dudv$$
+
+Si tenemos que $x = u$ y $y = \psi(u, v)$
+\\Entonces:
+$$dx dy = \begin{vmatrix}
+    \frac{\partial(x, y)}{\partial(u, v)}
+\end{vmatrix} du dv$$
+
+en donde $\frac{\partial(x, y)}{\partial(u, v)}$ es el Jacobiano de la transformación $T.$
+
+Si calculamos el Jacobiano:
+$$J_T = \begin{bmatrix}
+    \frac{\partial x}{\partial u} & \frac{\partial x}{\partial v}\\
+    \frac{\partial y}{\partial u} & \frac{\partial y}{\partial v}
+\end{bmatrix} = \begin{bmatrix}
+    1 & 0\\
+    \frac{\partial \psi}{\partial u} & \frac{\partial \psi}{\partial v}
+\end{bmatrix}$$
+
+Así, el determinante de la matriz es:
+
+$$\begin{vmatrix}
+    J_T
+\end{vmatrix} = \begin{vmatrix}
+    \frac{\partial \psi}{\partial v}
+\end{vmatrix}$$
+
+Observación:
+\\Como en $D^*$, $v$ está acotada por $g(u) \leq v \leq h(u)$ y a su vez, $u$ por $a \leq u \leq b.$
+
+Entonces la transofrmación $T$ mapea la región en el plano $uv$ al dominio $D$ en el plano $xy,$ manteniendo así la correspondencia uno a uno, ya que teníamos que $\frac{\partial \psi}{\partial v} \neq 0.$
+
+Así, dado que $\psi$ es de $C^{-1}, \frac{\partial \psi}{\partial v} \neq 0$ y $f$ es continua, el cambio de variables es completamente válido y la ecuación dada al inicio se cumple.
+
+$$\iint_D f(x, y) \ dx \ dy = \iint_{D^*} f(u, \psi(u, v))\begin{vmatrix}
+    \frac{\partial \psi}{\partial v}
+\end{vmatrix} dudv \ \ \blacksquare$$
