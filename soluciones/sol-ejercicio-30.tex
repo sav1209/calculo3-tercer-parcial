@@ -1,4 +1,4 @@
-	a) Calcular la integral triple \( \int \int \int_B z \, dx \, dy \, dz \), donde \( B \) es la región dentro del cilindro \( x^2 + y^2 = 1 \), por encima del plano \( xy \) y por debajo del cono \( z = \sqrt{x^2 + y^2} \).\\
+\section*{ Solución a)}
 	
 	La región \( B \) está definida por:
 	
@@ -54,4 +54,59 @@
 	
 	\[
 	\frac{1}{8} \cdot 2\pi = \boxed {\frac{\pi}{4}}.
+	\]
+	
+	\section*{ Solución b)}
+	
+	Calculamos la integral:
+	\[
+	\iiint_W \frac{1}{\sqrt{x^2 + y^2 + z^2}} \, dx\,dy\,dz,
+	\]
+	donde \(W\) está definida por \( \frac{1}{2} \leq z \leq 1 \) y \(x^2 + y^2 + z^2 \leq 1\).
+	
+	\subsection*{Cambio a coordenadas cilíndricas}
+	Coordenadas cilíndricas:
+	\[
+	x = r\cos\theta, \quad y = r\sin\theta, \quad z = z, \quad dx\,dy\,dz = r \, dr\,d\theta\,dz,
+	\]
+	y \(\sqrt{x^2 + y^2 + z^2} = \sqrt{r^2 + z^2}\).\\
+	
+	Reescribimos la integral como:
+	\[
+	\int_0^{2\pi} \int_{1/2}^1 \int_0^{\sqrt{1-z^2}} \frac{r}{\sqrt{r^2 + z^2}} \, dr\,dz\,d\theta.
+	\]
+	
+	\subsection*{Integral respecto a \(r\)}
+	Sea \( u = r^2 + z^2 \), entonces \( du = 2r \, dr \). Los límites son:
+	\[
+	r = 0 \implies u = z^2, \quad r = \sqrt{1-z^2} \implies u = 1.
+	\]
+	La integral queda:
+	\[
+	\int_0^{\sqrt{1-z^2}} \frac{r}{\sqrt{r^2 + z^2}} \, dr = \frac{1}{2} \int_{z^2}^1 u^{-1/2} \, du = \sqrt{1} - \sqrt{z^2} = 1 - z.
+	\]
+	
+	\subsection*{Integral respecto a \(z\)}
+	La integral ahora es:
+	\[
+	\int_{1/2}^1 (1 - z) \, dz = \int_{1/2}^1 1 \, dz - \int_{1/2}^1 z \, dz.
+	\]
+	Resolviendo:
+	\[
+	\int_{1/2}^1 1 \, dz = \frac{1}{2}, \quad \int_{1/2}^1 z \, dz = \frac{3}{8}.
+	\]
+	Por lo tanto:
+	\[
+	\int_{1/2}^1 (1 - z) \, dz = \frac{1}{2} - \frac{3}{8} = \frac{1}{8}.
+	\]
+	
+	\subsection*{Integral respecto a \(\theta\)}
+	Finalmente:
+	\[
+	\int_0^{2\pi} 1 \, d\theta = 2\pi.
+	\]
+	
+	El resultado es:
+	\[
+	\iiint_W \frac{1}{\sqrt{x^2 + y^2 + z^2}} \, dx\,dy\,dz = 2\pi \cdot \frac{1}{8} = \boxed{\frac{\pi}{4}}.
 	\]
