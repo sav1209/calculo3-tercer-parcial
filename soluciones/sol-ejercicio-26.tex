@@ -1,0 +1,22 @@
+Para este caso se tiene que la región de tipo 1 descrita en los límites de integración es la siguientes
+\[W = \left\{(x, y, z) \mid 0 \leq x \leq 3, 0 \leq y \leq \sqrt{9 - x^2}, 0 \leq z \leq \sqrt{9 - x^2 - y^2}\right\}\]
+
+\texttt{Grafica}
+
+Realizando el cambio de variables con coordenadas esféricas y con $W^*$ la región dada por
+\[0 \leq p \leq 3, \qquad 0 \leq \theta \leq \frac{\pi}{2}, \qquad 0 \leq \phi \leq \frac{\pi}{2}\]
+se tiene que de la integral dada es igual a la siguiente integral iterada
+\begin{align*}
+	\int_0^{\frac{\pi}{2}} \int_0^{\frac{\pi}{2}} \int_0^3 \frac{p}{1 + p^4} \cdot p^2 \sen\phi\, dp\, d\theta\, d\phi
+	&= \int_0^{\frac{\pi}{2}} \int_0^{\frac{\pi}{2}} \int_0^3 \frac{p^3}{1 + p^4} \sen\phi\, dp\, d\theta\, d\phi\\
+	&= \int_0^{\frac{\pi}{2}} \int_0^{\frac{\pi}{2}} \left[\frac{1}{4} \ln|1+p^4| \sen\phi\right]_{p=0}^{p=3}\, d\theta\, d\phi\\
+	&= \int_0^{\frac{\pi}{2}} \int_0^{\frac{\pi}{2}} \frac{1}{4} \ln(82) \sen\phi\, d\theta\, d\phi\\
+	&= \frac{1}{4} \ln(82) \int_0^{\frac{\pi}{2}} \int_0^{\frac{\pi}{2}} \sen\phi\, d\theta\, d\phi\\
+	&= \frac{1}{4} \ln(82) \int_0^{\frac{\pi}{2}} \frac{\pi}{2} \sen\phi \, d\phi\\
+	&= \frac{1}{4} \ln(82) \cdot \frac{\pi}{2} \cdot [-\cos\phi]_0^{\pi/2}\\
+	&= \frac{1}{4} \ln(82) \cdot \frac{\pi}{2} \cdot 1\\
+	&= \frac{\pi}{8} \ln(82)
+\end{align*}
+
+Por lo tanto
+\[\int_0^3 \int_0^{\sqrt{9 - x^2}} \int_0^{\sqrt{9 - x^2 - y^2}} \frac{\sqrt{x^2 + y^2 + z^2}}{1 + [x^2 + y^2 + z^2]^2}\, dz\, dy\, dx = \frac{\pi}{8} \ln(82) \approx 1.730515\]
