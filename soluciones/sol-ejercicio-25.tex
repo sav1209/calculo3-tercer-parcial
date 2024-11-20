@@ -1,0 +1,25 @@
+Note que en este caso parece apropiada utilizar un cambio de variable con coordenadas esféricas, pues $W$ esta acotada por esferas y sabemos que $x^2 + y^2 + z^2$ puede remplazarse por $p^2$, obteniendo así una integral mucho más sencilla. Además, la región descrita en este ejercicio es la siguiente
+
+\texttt{Gráfica}
+
+Entonces, si $W^*$ es la región dada por
+\[b \leq p \leq a, \qquad 0 \leq \theta \leq 2\pi, \qquad 0 \leq \phi \leq \pi\]
+
+Aplicando la fórmula del cambio de variables con coordenadas esféricas
+
+\[\iiint_W \frac{dx\, dy\, dz}{(x^2 + y^2 + z^2)^{3/2}}	= \iiint_{W^*} \frac{1}{(p^2)^{3/2}} \cdot p^2\sin\phi\, dp\, d\theta\, d\phi = \iiint_{W^*} \frac{1}{p} \sin \phi\, dp\, d\theta\, d\phi\]
+
+Y por el terorema de Fubini esta última integral es igual a la siguiente integral iterada
+\begin{align*}
+	\int_{0}^{2\pi} \int_{0}^{\pi} \int_b^a\frac{1}{p} \sin\phi \, dp\, d\phi\, d\theta &= \int_{0}^{2\pi} \int_{0}^{\pi} \left[\log|p| \sin\phi\right]_{p=b}^{p=a} \, d\phi\, d\theta\\
+	&= \int_{0}^{2\pi} \int_{0}^{\pi} \log\left(\frac{a}{b}\right) \sin\phi \, d\phi\, d\theta\\
+	&= \log\left(\frac{a}{b}\right) \int_{0}^{2\pi} \int_{0}^{\pi} \sin\phi \, d\phi\, d\theta\\
+	&= \log\left(\frac{a}{b}\right) \int_{0}^{2\pi} [-\cos\phi]_{\phi=0}^{\phi=\pi}\, d\theta\\
+	&= \log\left(\frac{a}{b}\right) \int_{0}^{2\pi} 2\, d\theta\\
+	&= 2\log\left(\frac{a}{b}\right) \int_{0}^{2\pi} d\theta\\
+	&= 2\log\left(\frac{a}{b}\right) (2\pi)\\
+	&= 4\pi\log\left(\frac{a}{b}\right)
+\end{align*}
+
+Por lo tanto
+\[\iiint_W \frac{dx\, dy\, dz}{(x^2 + y^2 + z^2)^{3/2}} = 4\pi\log\left(\frac{a}{b}\right)\]
