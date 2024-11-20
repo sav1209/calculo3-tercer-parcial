@@ -1,0 +1,68 @@
+Para encontrar el area dentro de la curva \( r = 1 + \sin\theta \), es necesario describir la función en coordenadas polares.
+
+Es decir, el area que describe la distancía \( r \) que está acotada por la función \( r = 1 + \sin\theta \) ; donde \(\theta\) varía libremente de \( 0 \) a \( 2\pi \)
+
+\[
+A = \int \int_R \, dA, \quad dA = r \, dr \, d\theta.
+\]
+
+Los límites de integración se vuelven: 
+- \( \theta \) from \( 0 \) to \( 2\pi \),
+- \( r \) from \( 0 \) to \( 1 + \sin\theta \).
+
+Reemplazando los limites de integración de la región \( R \):
+\[
+A = \int_{0}^{2\pi} \int_{0}^{1+\sin\theta} r \, dr \, d\theta.
+\]
+
+Resolvemos la integral interior con respecto a r (\( dr \)):
+\[
+\int_{0}^{1+\sin\theta} r \, dr = \left[ \frac{r^2}{2} \right]_0^{1+\sin\theta} = \frac{(1+\sin\theta)^2}{2}.
+\]
+
+Sustituimos en la integral exterior con respecto a  (\( \theta \))
+\[
+A = \int_{0}^{2\pi} \frac{(1 + \sin\theta)^2}{2} \, d\theta.
+\]
+
+Se expande el binomio al cuadrado \( (1 + \sin\theta)^2 \):
+\[
+(1 + \sin\theta)^2 = 1 + 2\sin\theta + \sin^2\theta.
+\]
+
+Se extrae la constante \( \frac{1}{2} \) de la integral:
+\[
+A = \frac{1}{2} \int_{0}^{2\pi} \left( 1 + 2\sin\theta + \sin^2\theta \right) \, d\theta.
+\]
+
+Se separa la integral:
+\[
+A = \frac{1}{2} \left[ \int_{0}^{2\pi} 1 \, d\theta + 2 \int_{0}^{2\pi} \sin\theta \, d\theta + \int_{0}^{2\pi} \sin^2\theta \, d\theta \right].
+\]
+
+Resolvemos cada una de las integrales, usando las formulas:
+
+\[
+\int_{0}^{2\pi} du = u, \int_{0}^{2\pi} \sin udu = -\cos u, \int_{0}^{2\pi} \sin^2 udu = \frac{u}{2} - \frac{1}{4} \sin 2u
+\]
+
+Se obtienen los siguientes valores:
+
+\[
+\left[ \theta \right]_0^{2\pi} = 2\pi, \left[ -\cos\theta \right]_0^{2\pi} = 0, \left[ \frac{1}{2} - \frac{1}{4} \sin 2\theta \right]_0^{2\pi} = \pi, 
+\]
+
+Se sustituyen los valores en las integrales:
+\[
+\int_{0}^{2\pi} 1 \, d\theta = 2\pi, \quad \int_{0}^{2\pi} \sin\theta \, d\theta = 0, \quad \int_{0}^{2\pi} \sin^2\theta \, d\theta = \pi.
+\]
+
+Sustituyendo los valores obtenidos:
+\[
+A = \frac{1}{2} \left[ 2\pi + 0 + \pi \right] = \frac{1}{2} \cdot 3\pi = \frac{3\pi}{2}.
+\]
+
+Finalmente, el area es:
+\[
+\boxed{\frac{3\pi}{2}}
+\]
