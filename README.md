@@ -6,3 +6,4 @@
 - Los paquetes utilizados para todo el documento se encuentran en `preamble.tex`.
   - Si alguno de los paquetes que utilizaste no esta en el archivo `preamble.tex`, añadelo.
 - Si necesitas utilizar gráficos (.jpg, .png, .svg, .pdf, etc.) agregalos a la carpeta `figuras` y para incluirlos utiliza `\includegraphics{figuras/nombre-del-archivo}` (o alguna otra macro para añadir graficos) desde el archivo en el que desees incluirlos.
+- NO escribas 'Ejercicio XX' o 'Solución.' al inicio de tus archivos, esto se agrega automáticamente.
