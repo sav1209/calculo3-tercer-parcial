@@ -1,0 +1,145 @@
+
+
+Queremos calcular la integral:
+
+\[
+\int_{W} \sqrt{x^2 + y^2 + z^2} \cdot e^{-(x^2 + y^2 + z^2)} \, dV
+\]
+
+donde \( W \) es el sólido delimitado por las esferas \( x^2 + y^2 + z^2 = a^2 \) y \( x^2 + y^2 + z^2 = b^2 \), con \( 0 < b < a \).
+
+Donde \( x^2 + y^2 + z^2 = a^2 \) y \( x^2 + y^2 + z^2 = b^2 \) son esferas concentricas, donde \( b \leq a \)
+
+\subsection*{Representación en coordenadas esféricas}
+
+En coordenadas esféricas, tenemos las relaciones:
+
+\[
+x^2 + y^2 + z^2 = r^2, \quad dV = r^2 \sin\theta \, dr \, d\theta \, d\phi
+\]
+
+Donde sustituimos las relaciones entre \(x\), \(y\), \(z\) a las coordenadas esféricas \(r\), \(\theta\), \(\phi\), y son:
+
+\[
+\begin{aligned}
+x &= r \sin\theta \cos\phi, \\
+y &= r \sin\theta \sin\phi, \\
+z &= r \cos\theta,
+\end{aligned}
+\]
+
+donde:
+\begin{itemize}
+    \item \(r\) es la distancia radial desde el origen.
+    \item \(\theta \in [0, \pi]\) es el ángulo polar medido desde el eje \(z\).
+    \item \(\phi \in [0, 2\pi]\) es el ángulo azimutal medido desde el eje \(x\) en el plano \(xy\).
+\end{itemize}
+
+\subsection*{Transformación de la Integral de Cartesiana a Coordenadas Esféricas}
+
+Para transformar la integral:
+
+\[
+I =\int_{W} \sqrt{x^2 + y^2 + z^2} \cdot e^{-(x^2 + y^2 + z^2)} \, dV
+\]
+
+hacia la forma en coordenadas esféricas.
+
+Por lo tanto, el término \(\sqrt{x^2 + y^2 + z^2}\) en la integral se convierte en:
+
+\[
+\sqrt{x^2 + y^2 + z^2} = r
+\]
+
+\subsection*{El diferencial de volumen \(dV\)}
+
+En coordenadas esféricas, el diferencial de volumen \(dV\) se expresa como:
+
+\[
+dV = r^2 \sin\theta \, dr \, d\theta \, d\phi
+\]
+
+\subsection*{Reemplazo en la integral original}
+
+Reemplazamos \(\sqrt{(x^2 + y^2 + z^2} = r\), y reemplazamos \(dV = r^2 \sin\theta \, dr \, d\theta \, d\phi\) en la integral original:
+   \[
+   I = \int_{0}^{2\pi} \int_{0}^{\pi} \int_{b}^{a} r \cdot e^{-r^2} \cdot r^2 \sin\theta \, dr \, d\theta \, d\phi
+   \]
+\subsection*{Límites de integración de la región \(W\)}
+
+Finalmente, los límites de integración en \(r\) van de \(b\) a \(a\), ya que el sólido está limitado por las esferas \(x^2 + y^2 + z^2 = a^2\) y \(x^2 + y^2 + z^2 = b^2\).
+
+Entonces, la integral completa en coordenadas esféricas es:
+
+   \[
+   \int_{W} \sqrt{x^2 + y^2 + z^2} \cdot e^{-(x^2 + y^2 + z^2)} \, dV = \int_{0}^{2\pi} \int_{0}^{\pi} \int_{b}^{a} r \cdot e^{-r^2} \cdot r^2 \sin\theta \, dr \, d\theta \, d\phi
+   \]
+
+Reemplazamos en la integral original:
+
+\[
+\int_W \sqrt{x^2 + y^2 + z^2} \cdot e^{-(x^2 + y^2 + z^2)} \, dV = \int_{r=b}^{a} \int_{\theta=0}^{\pi} \int_{\phi=0}^{2\pi} r \cdot e^{-r^2} \cdot r^2 \sin\theta \, d\phi \, d\theta \, dr
+\]
+
+Simplificando:
+
+\[
+I = \int_{0}^{2\pi} \int_{0}^{\pi} \int_{b}^{a} r^3 \cdot e^{-r^2} \sin\theta \, dr \, d\theta \, d\phi
+\]
+
+\subsection*{Separación de variables}
+
+Dado que los límites de integración son independientes, podemos separar la integral en tres factores:
+
+\[
+\int_W (x^2 + y^2 + z^2) e^{-(x^2 + y^2 + z^2)} \, dV = \left( \int_{\phi=0}^{2\pi} d\phi \right) \left( \int_{\theta=0}^{\pi} \sin\theta \, d\theta \right) \left( \int_{r=b}^{a} r^3 e^{-r^2} \, dr \right)
+\]
+
+\subsection*{Evaluando las integrales angulares}
+
+1. Integral en \( \phi \):
+
+\[
+\int_{\phi=0}^{2\pi} d\phi = 2\pi
+\]
+
+2. Integral en \( \theta \):
+
+\[
+\int_{\theta=0}^{\pi} \sin\theta \, d\theta = \left[ -\cos\theta \right]_0^{\pi} = -\cos\pi + \cos0 = 2
+\]
+
+\subsection*{Evaluación de la integral radial}
+
+Sea \( u = r^2 \), entonces \( du = 2r \, dr \) y \( dr = \frac{du}{2r} \):
+\[
+\int_{b}^{a} r^3 e^{-r^2} \, dr = \int_{b^2}^{a^2} \frac{u}{2} e^{-u} \, du = \frac{1}{2} \int_{b^2}^{a^2} u e^{-u} \, du
+\]
+
+Usamos integración por partes donde \( v = u \) y \( dw = e^{-u} du \):
+\[
+\int u e^{-u} \, du = -u e^{-u} + \int e^{-u} \, du = -u e^{-u} - e^{-u}
+\]
+
+Evaluamos desde \( b^2 \) hasta \( a^2 \):
+\[
+\left[ -u e^{-u} - e^{-u} \right]_{b^2}^{a^2} = \left[ -(a^2 e^{-a^2} + e^{-a^2}) \right] - \left[ -(b^2 e^{-b^2} + e^{-b^2}) \right]
+\]
+
+\[
+= -(a^2 + 1)e^{-a^2} + (b^2 + 1)e^{-b^2}
+\]
+
+\subsection*{Sustituyendo en las integrales}
+
+Sustituyendo las integrales angulares y radiales en la expresión original:
+
+\[
+\text{Resultado} = 2\pi \cdot 2 \cdot \frac{1}{2} \left[ -(a^2 + 1)e^{-a^2} + (b^2 + 1)e^{-b^2} \right]
+\]
+
+Simplificando:
+
+\[
+\text{Resultado} = 2\pi \left[ (b^2 + 1)e^{-b^2} - (a^2 + 1)e^{-a^2} \right]
+\]
