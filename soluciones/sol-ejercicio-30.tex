@@ -1,0 +1,57 @@
+	a) Calcular la integral triple \( \int \int \int_B z \, dx \, dy \, dz \), donde \( B \) es la región dentro del cilindro \( x^2 + y^2 = 1 \), por encima del plano \( xy \) y por debajo del cono \( z = \sqrt{x^2 + y^2} \).\\
+	
+	La región \( B \) está definida por:
+	
+	\begin{enumerate}
+		\item  \( 0 \leq r \leq 1 \) (por el cilindro \( x^2 + y^2 = 1 \), es decir, la base del cilindro).
+		\item  \( 0 \leq \theta \leq 2\pi \) (cubre todo el círculo en el plano XY ).
+		\item  \( 0 \leq z \leq r \) (por debajo del cono \( z = \sqrt{x^2 + y^2} \), \( z \) varía desde 0 ()en el plano \( xy \)) hasta \( r \) en la superficie del cono).
+	\end{enumerate}
+	
+	La integral triple en coordenadas cilíndricas es:
+	
+	\[
+	\int_0^{2\pi} \int_0^1 \int_0^r z \, r \, dz \, dr \, d\theta.
+	\]
+	
+	Evaluamos la integral en \( z \):
+	
+	\[
+	\int_0^r z \, dz = \left[ \frac{z^2}{2} \right]_0^r = \frac{r^2}{2}.
+	\]
+	
+	La integral se reduce a:
+	
+	\[
+	\int_0^{2\pi} \int_0^1 \frac{r^2}{2} \cdot r \, dr \, d\theta.
+	\]
+	
+	Simplificando:
+	
+	\[
+	\frac{r^2}{2} \cdot r = \frac{r^3}{2}.
+	\]
+	
+	Reescribimos la integral como:
+	
+	\[
+	\int_0^{2\pi} \int_0^1 \frac{r^3}{2} \, dr \, d\theta.
+	\]
+	
+	Evaluamos la integral en \( r \):
+	
+	\[
+	\int_0^1 \frac{r^3}{2} \, dr = \frac{1}{2} \left[ \frac{r^4}{4} \right]_0^1 = \frac{1}{2} \cdot \frac{1}{4} = \frac{1}{8}.
+	\]
+	
+	Ahora, evaluamos la integral en \( \theta \):
+	
+	\[
+	\int_0^{2\pi} 1 \, d\theta = 2\pi.
+	\]
+	
+	Finalmente, el valor de la integral es:
+	
+	\[
+	\frac{1}{8} \cdot 2\pi = \boxed {\frac{\pi}{4}}.
+	\]
