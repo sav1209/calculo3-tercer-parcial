@@ -1,0 +1,88 @@
+
+\subsection*{(a) Transformación}
+La integral dada es:
+\[
+\int_0^1 \int_0^{x^2} xy \, dy \, dx.
+\]
+
+Para transformar la integral a una nueva región de integración más simple, elegimos la transformación:
+\[
+x = u, \quad y = uv.
+\]
+
+\subsection*{Región de integración \(D^*\) de la transformación T}
+
+La nueva región de integración \(D^*\) se define como:
+\[
+0 \leq u \leq 1, \quad 0 \leq v \leq u.
+\]
+Esta es una región triangular en el plano \(u\)-\(v\), con límites:
+\begin{itemize}
+    \item \(u\) varía entre 0 y 1.
+    \item Para un valor fijo de \(u\), \(v\) varía entre 0 y \(u\).
+\end{itemize}
+
+
+La transformación \(x = u, y = uv\) fue elegida satisface la región original porqué:
+\begin{itemize}
+    \item \(x = u\): Esto garantiza que \(u\) y \(x\) tengan el mismo rango: \(0 \leq u \leq 1\).
+    \item \(y = uv\): Esto asegura que \(y\) y \(x^2\) son proporcionales, ya que:
+    \[
+    y = uv \quad \text{y, como } 0 \leq v \leq u, \quad y \leq u^2 = x^2.
+    \]
+
+    Dónde \( y \) está acotado por \(u^2\) ,y , a la vez, \( u^2 = x^2\)
+    
+    Y coincide con el límite superior original \(y = x^2\).
+\end{itemize}
+
+La transformación es inyectiva, lo que significa que cada punto en \(D^*\) corresponde a un único punto en la región original, y viceversa.
+\[
+J = \begin{vmatrix}
+\frac{\partial x}{\partial u} & \frac{\partial x}{\partial v} \\
+\frac{\partial y}{\partial u} & \frac{\partial y}{\partial v}
+\end{vmatrix}
+= \begin{vmatrix}
+1 & 0 \\
+v & u
+\end{vmatrix} = u.
+\]
+
+Usamos la transformación:
+\[
+x = u, \quad y = uv,
+\]
+con el determinante jacobiano:
+\[
+J = \begin{vmatrix}
+\frac{\partial x}{\partial u} & \frac{\partial x}{\partial v} \\
+\frac{\partial y}{\partial u} & \frac{\partial y}{\partial v}
+\end{vmatrix}
+= \begin{vmatrix}
+1 & 0 \\
+v & u
+\end{vmatrix} = u.
+\]
+
+La integral se convierte en:
+\[
+\int_0^1 \int_0^{x^2} xy \, dy \, dx = \int_0^1 \int_0^u u^3v \, dv \, du.
+\]
+
+Donde los nuevos límites de integración son lineales.
+
+\subsection*{(b) Evaluación}
+\paragraph{Integral original:}
+\[
+\int_0^1 \int_0^{x^2} xy \, dy \, dx = \int_0^1 \frac{x^5}{2} \, dx = \frac{1}{2} \int_0^1 x^5 \, dx = \frac{1}{12}.
+\]
+
+\paragraph{Integral transformada:}
+\[
+\int_0^1 \int_0^u u^3v \, dv \, du = \int_0^1 \frac{u^5}{2} \, du = \frac{1}{2} \int_0^1 u^5 \, du = \frac{1}{12}.
+\]
+
+Por lo tanto, el valor de la integral es:
+\[
+\boxed{\frac{1}{12}}
+\]
