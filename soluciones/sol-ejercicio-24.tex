@@ -1,0 +1,49 @@
+Solucion\\
+Con ayuda de las condiciones dadas obtenemos los siguientes limites de integración
+$$
+\begin{gathered}
+0 \leq x \leq 1 \\
+(1-x) \leq y \leq \sqrt{1-x^2}
+\end{gathered}
+$$
+y podemos establecer la integral doble dela siguiente forma
+$$
+\int_0^1 \int_{1-x}^{\sqrt{1-x^2}} \frac{1}{\left(x^2+y^2\right)^2} d y d x
+$$
+
+Para resolverlo hacemos cambio a coordenadas
+$$
+\begin{aligned}
+& \int_0^1 \int_{1-x}^{\sqrt{1-x^2}} \frac{1}{\left(x^2+y^2\right)^2} d y d x\Rightarrow \int_0^{\pi / 2} \int_{\frac{1}{\cos \theta+\operatorname{sen} \theta}}^1{\frac{1}{\left(r^2\right)^2} r d r d \theta} \\
+\text{Resolviendo}\\
+& \int_{\frac{1}{\cos \theta+\operatorname{sen} \theta}}^1{\frac{1}
+{\left(r^2\right)^2} r d r} \int_{\frac{1}{\cos \theta+\operatorname{sen} \theta}}^1 \frac{1}{r^3} d r=-\left.\frac{1}{2 x^2}\right|_{\frac{1}{\cos \theta+\operatorname{sen} \theta}}^1
+\end{aligned}
+$$
+$$
+\begin{aligned}
+& =-\frac{1}{2(1)^2}+\frac{1}{2\left(\frac{1}{(\cos \theta+\operatorname{sen} \theta)^2}\right).} \\
+& =\frac{(\cos \theta+\operatorname{sen} \theta)^2-1}{2}
+\end{aligned}
+$$
+
+Remplazamos en nuestra integral
+$$
+\begin{aligned}
+& \int_0^{\pi / 2} \int_{\frac{1}{\cos \theta+\operatorname{sen} \theta}}^1 \frac{1}{r^3} d r d \theta=\int_0^{\pi / 2} \frac{(\cos\theta+\operatorname{sen} \theta)^2-1}{2} d \theta \\
+& (\cos \theta+\operatorname{sen} \theta)^2=1+2 \cos \theta \operatorname{sen} \theta \\
+\Rightarrow & \int_0^{\pi / 2} \frac{(2\operatorname{cos}\theta \operatorname{sen} \theta+1)-1}{2} d \theta=\int_0^{\pi / 2} cos \theta \operatorname{sen} \theta d \theta
+\end{aligned}
+$$
+$$
+\begin{aligned}
+\text{Sea}\\
+&u=\operatorname{sen} \theta, d u=\cos \theta d \theta \\
+\Rightarrow & \int u d u=\left.\frac{u^2}{2} \Rightarrow \frac{\operatorname{sen}^2(\theta)}{2}\right|_0 ^{\pi / 2} \\
+& \frac{\operatorname{sen}^2(\pi / 2)}{2}=\frac{(1)^2}{2}=\frac{1}{2}
+\end{aligned}
+$$
+
+Finalmente decimos que
+$$
+\int_0^{\pi / 2} \int_{\frac{1}{\cos \theta+\operatorname{sen} \theta}}^1 \frac{1}{r^3} d r d \theta=\frac{1}{2}
