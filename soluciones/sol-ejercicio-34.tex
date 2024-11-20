@@ -1,0 +1,88 @@
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[a4paper, left=2cm, right=2cm, top=2cm, bottom=2cm]{geometry}
+
+\begin{document}
+
+	Primero debemos definir los limites de integración:\\
+	
+	Para la coordenada radial $\rho$, la distancia del origen al punto tenemos que \( \rho = \sqrt{6} \). Lo qué significa que $\rho$ varia de 0 a $\sqrt{6}$. Por lo tanto, los limites para $\rho$ son: $0\leq \rho \leq \sqrt{6}$.\\
+	
+	Ahora bien, el angulo polar $\phi$, es el ángulo de la proyección del punto con respecto al eje z. En este caso, la región esta acotada por dos conos:
+	
+	\begin{center}
+	\begin{enumerate}
+	\item $ \phi = \frac{\pi}{4}$
+	\item $ \phi = \arctan(2)$
+	\end{enumerate}
+	\end{center}
+	
+	Por lo tanto, los limites para $\phi$ son: $\frac{\pi}{4} \leq \phi \leq \arctan(2)$.\\
+	
+	Finalmente, $\theta$ el ángulo en el plano XY, esta limitado por: $\leq \theta \leq \frac{\pi}{2}$\\
+	
+	En coordenadas esféricas, el diferencial de volumen es:
+	
+	\[
+	dV = \rho^2 \sin(\phi) \, d\rho \, d\phi \, d\theta.
+	\]
+	
+	Habiendo definido los limites de integración para cada coordenada, podemos escribir la integral como:
+	\[
+	\iiint_{\text{R}} \frac{1}{\rho} \, dV = \int_{0}^{\frac{\pi}{2}} \int_{\frac{\pi}{4}}^{\arctan(2)} \int_{0}^{\sqrt{6}} \frac{1}{\rho} \rho^2 \sin(\phi) \, d\rho \, d\phi \, d\theta.
+	\]
+	
+	Simplificando la función:
+	\[
+	\frac{1}{\rho} \rho^2 \sin(\phi) = \rho \sin(\phi),
+	\]
+	la integral la reescribimos como:
+	\[
+	\int_{0}^{\frac{\pi}{2}} \int_{\frac{\pi}{4}}^{\arctan(2)} \int_{0}^{\sqrt{6}} \rho \sin(\phi) \, d\rho \, d\phi \, d\theta.
+	\]
+	
+	
+	\subsection*{Integral respecto a \( \rho \)}
+	\[
+	\int_{0}^{\sqrt{6}} \rho \, d\rho = \left[ \frac{\rho^2}{2} \right]_{0}^{\sqrt{6}} = \frac{6}{2} = 3.
+	\]
+	
+	Esto reduce la integral a:
+	\[
+	3 \int_{0}^{\frac{\pi}{2}} \int_{\frac{\pi}{4}}^{\arctan(2)} \sin(\phi) \, d\phi \, d\theta.
+	\]
+	
+	\subsection*{Integral respecto a \( \phi \)}
+	La integral respecto a \( \phi \) es:
+	\[
+	\int_{\frac{\pi}{4}}^{\arctan(2)} \sin(\phi) \, d\phi = \left[-\cos(\phi)\right]_{\frac{\pi}{4}}^{\arctan(2)}.
+	\]
+	
+	Calculamos los valores:
+	\[
+	\cos\left(\frac{\pi}{4}\right) = \frac{\sqrt{2}}{2}, \quad \cos(\arctan(2)) = \frac{1}{\sqrt{5}}.
+	\]
+	
+	Entonces:
+	\[
+	\int_{\frac{\pi}{4}}^{\arctan(2)} \sin(\phi) \, d\phi = -\frac{1}{\sqrt{5}} + \frac{\sqrt{2}}{2}.
+	\]
+	
+	\subsection*{Integral respecto a \( \theta \)}
+	La integral respecto a \( \theta \) es:
+	\[
+	\int_{0}^{\frac{\pi}{2}} 1 \, d\theta = \frac{\pi}{2}.
+	\]
+	
+	\subsection*{Resultado:}
+	El resultado de la integral es:
+	\[
+	\iiint_{\text{región}} \frac{1}{\rho} \, dV = 3 \cdot \frac{\pi}{2} \cdot \left(\frac{\sqrt{2}}{2} - \frac{1}{\sqrt{5}}\right).
+	\]
+	
+	Así, el valor de la integral es:
+	\[
+	\boxed{\frac{3\pi}{2} \left(\frac{\sqrt{2}}{2} - \frac{1}{\sqrt{5}}\right)}.
+	\]
+	
+\end{document}
